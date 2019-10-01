@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wines>
+  <wine>
+    <Name>red1</Name>
+    <Price>$5.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Ingles</Producer>
+    <Sub>Melborne</Sub>
+    <Region>Region1</Region>
+    <Country>Australia</Country>
+  </wine>
+  <wine>
+    <Name>red2</Name>
+    <Price>$6.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Food Lion</Producer>
+    <Sub>Troutman</Sub>
+    <Region>NC</Region>
+    <Country>USA</Country>
+  </wine>
+  <wine>
+    <Name>red3</Name>
+    <Price>$4.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Sheetz</Producer>
+    <Sub>Perth</Sub>
+    <Region>Region2</Region>
+    <Country>Australia</Country>
+  </wine>
+  <wine>
+    <Name>white1</Name>
+    <Price>$10.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Whole Foods</Producer>
+    <Sub>Paris</Sub>
+    <Region>Burgundy</Region>
+    <Country>France</Country>
+  </wine>
+  <wine>
+    <Name>white2</Name>
+    <Price>$8.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Piggly Wiggly</Producer>
+    <Sub>Eugene</Sub>
+    <Region>Oregon</Region>
+    <Country>USA</Country>
+  </wine>
+  <wine>
+    <Name>white3</Name>
+    <Price>$7.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Dollar General</Producer>
+    <Sub>Sierra Nevada</Sub>
+    <Region>California</Region>
+    <Country>USA</Country>
+  </wine>
+  <wine>
+    <Name>bubbles1</Name>
+    <Price>$15.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Whole Foods</Producer>
+    <Sub>Normandy</Sub>
+    <Region>Champagne</Region>
+    <Country>France</Country>
+  </wine>
+  <wine>
+    <Name>bubbles2</Name>
+    <Price>$12.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Ingles</Producer>
+    <Sub>Sand</Sub>
+    <Region>Dorne</Region>
+    <Country>Spain</Country>
+  </wine>
+  <wine>
+    <Name>bubbles3</Name>
+    <Price>$11.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Sheetz</Producer>
+    <Sub>Linore</Sub>
+    <Region>Champagne</Region>
+    <Country>France</Country>
+  </wine>
+  <wine>
+    <Name>chair wine</Name>
+    <Price>$5.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Rene Barbier</Producer>
+    <Sub>Tower of Joy</Sub>
+    <Region>Dorne</Region>
+    <Country>Spain</Country>
+  </wine>
+  <wine>
+    <Name>red4</Name>
+    <Price>$5.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Ingles</Producer>
+    <Sub>Desert</Sub>
+    <Region>Region3</Region>
+    <Country>Australia</Country>
+  </wine>
+  <wine>
+    <Name>red5</Name>
+    <Price>$6.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Food Lion</Producer>
+    <Sub>Mooresville</Sub>
+    <Region>NC</Region>
+    <Country>USA</Country>
+  </wine>
+  <wine>
+    <Name>red6</Name>
+    <Price>$4.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Sheetz</Producer>
+    <Sub>Sydney</Sub>
+    <Region>Region2</Region>
+    <Country>Australia</Country>
+  </wine>
+  <wine>
+    <Name>white4</Name>
+    <Price>$10.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Whole Foods</Producer>
+    <Sub>Paris</Sub>
+    <Region>Burgundy</Region>
+    <Country>France</Country>
+  </wine>
+  <wine>
+    <Name>white5</Name>
+    <Price>$8.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Piggly Wiggly</Producer>
+    <Sub>Portland</Sub>
+    <Region>Oregon</Region>
+    <Country>USA</Country>
+  </wine>
+  <wine>
+    <Name>white6</Name>
+    <Price>$7.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Dollar General</Producer>
+    <Sub>Sierra Nevada</Sub>
+    <Region>California</Region>
+    <Country>USA</Country>
+  </wine>
+  <wine>
+    <Name>bubbles4</Name>
+    <Price>$15.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Whole Foods</Producer>
+    <Sub>Linore</Sub>
+    <Region>Champagne</Region>
+    <Country>France</Country>
+  </wine>
+  <wine>
+    <Name>bubbles5</Name>
+    <Price>$12.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Ingles</Producer>
+    <Sub>Sand</Sub>
+    <Region>Dorne</Region>
+    <Country>Spain</Country>
+  </wine>
+  <wine>
+    <Name>bubbles6</Name>
+    <Price>$11.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Sheetz</Producer>
+    <Sub>Normandy</Sub>
+    <Region>Champagne</Region>
+    <Country>France</Country>
+  </wine>
+  <wine>
+    <Name>chair wine</Name>
+    <Price>$5.00 </Price>
+    <URL>http://wine.com</URL>
+    <Producer>Rene Barbier</Producer>
+    <Sub>Tower of Joy</Sub>
+    <Region>Dorne</Region>
+    <Country>Spain</Country>
+  </wine>
+</wines>
