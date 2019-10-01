@@ -1,0 +1,48 @@
+{% do view.registerCssFile("assets/css/main.css") %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,600,600i,700,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Zilla+Slab:300,500,700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.fa-bars').click(function() {
+				$('body').toggleClass('noScroll');
+				$('#navigation').toggle();
+			});
+			$('#navLink1').click(function() {
+				$('body').toggleClass('noScroll');
+				$('#navigation').toggle();
+			});
+			$('#navLink2').click(function() {
+				$('body').toggleClass('noScroll');
+				$('#navigation').toggle();
+			});
+			$('#navLink3').click(function() {
+				$('body').toggleClass('noScroll');
+				$('#navigation').toggle();
+			});
+		});
+	</script>
+	<style>
+		body.noScroll {
+		  overflow: hidden;
+		}
+	</style>
+	{% endblock %}
+</head>
+
+<body class="flex flex-col bg-gray-800">
+	{% block body %}{% endblock %}
+</body>
+
+</html>

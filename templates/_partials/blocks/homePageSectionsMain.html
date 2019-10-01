@@ -1,0 +1,18 @@
+{% block homePageMain %}
+<section id="hero">
+  {% include "_partials/components/_block_hero" %}
+  {% block hero %}{% endblock %}
+</section>
+<section id="ourWines">
+  {% include "_partials/blocks/ourWinesLayout" %}
+  {% block ourWines %}{% endblock %}
+</section>
+<section id="about">
+  {% include "_partials/blocks/aboutLayout" %}
+  {% block about %}{% endblock %}
+</section>
+<section id="contact">
+  {% include "_partials/blocks/contactLayout" %}
+  {% block contact %}{% endblock %}
+</section>
+{% endblock %}
