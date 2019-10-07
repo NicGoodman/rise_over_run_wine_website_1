@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "cakephp/core",
-            "version": "3.8.4",
+            "version": "3.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
-                "reference": "47c3045326c92adbecd14cc92a2b7515dd9a30b9"
+                "reference": "bd893c7103f1b87d3fa41d80fc60024e1a18cf5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/47c3045326c92adbecd14cc92a2b7515dd9a30b9",
-                "reference": "47c3045326c92adbecd14cc92a2b7515dd9a30b9",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/bd893c7103f1b87d3fa41d80fc60024e1a18cf5f",
+                "reference": "bd893c7103f1b87d3fa41d80fc60024e1a18cf5f",
                 "shasum": ""
             },
             "require": {
@@ -54,11 +54,11 @@
                 "core",
                 "framework"
             ],
-            "time": "2019-09-09T19:30:50+00:00"
+            "time": "2019-10-05T19:33:15+00:00"
         },
         {
             "name": "cakephp/utility",
-            "version": "3.8.4",
+            "version": "3.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
@@ -3606,16 +3606,16 @@
         },
         {
             "name": "voku/arrayy",
-            "version": "5.14.1",
+            "version": "5.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/Arrayy.git",
-                "reference": "2a76c1f5b40ef78d757a137fc7d992a80783d229"
+                "reference": "6fe80d46f515d8d96db244d36e6099ef6659c04a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/2a76c1f5b40ef78d757a137fc7d992a80783d229",
-                "reference": "2a76c1f5b40ef78d757a137fc7d992a80783d229",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/6fe80d46f515d8d96db244d36e6099ef6659c04a",
+                "reference": "6fe80d46f515d8d96db244d36e6099ef6659c04a",
                 "shasum": ""
             },
             "require": {
@@ -3658,7 +3658,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2019-09-16T21:25:09+00:00"
+            "time": "2019-10-06T17:56:40+00:00"
         },
         {
             "name": "voku/email-check",
@@ -3765,16 +3765,16 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.23",
+            "version": "5.4.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/portable-utf8.git",
-                "reference": "bbecc90364dc1c7e028e0c0a6bf7c8ebfc119234"
+                "reference": "1ff025864df28cdbb946fe96f8343904400f5e2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/bbecc90364dc1c7e028e0c0a6bf7c8ebfc119234",
-                "reference": "bbecc90364dc1c7e028e0c0a6bf7c8ebfc119234",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/1ff025864df28cdbb946fe96f8343904400f5e2a",
+                "reference": "1ff025864df28cdbb946fe96f8343904400f5e2a",
                 "shasum": ""
             },
             "require": {
@@ -3835,7 +3835,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-09-27T07:24:07+00:00"
+            "time": "2019-10-06T00:26:19+00:00"
         },
         {
             "name": "voku/stop-words",
