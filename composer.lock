@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44b545b7c393bed6482b5109339f7add",
+    "content-hash": "5151beacd97e351dd299796355a08b9f",
     "packages": [
         {
             "name": "cakephp/core",
@@ -426,16 +426,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.6",
+            "version": "3.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "8cf2d3e18005e6fb44bb25f7d5238babba60b470"
+                "reference": "24300e95ce3acd47d10557a8bd8b9b9fbc520795"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/8cf2d3e18005e6fb44bb25f7d5238babba60b470",
-                "reference": "8cf2d3e18005e6fb44bb25f7d5238babba60b470",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/24300e95ce3acd47d10557a8bd8b9b9fbc520795",
+                "reference": "24300e95ce3acd47d10557a8bd8b9b9fbc520795",
                 "shasum": ""
             },
             "require": {
@@ -516,20 +516,20 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2019-09-27T17:33:15+00:00"
+            "time": "2019-10-03T19:15:33+00:00"
         },
         {
             "name": "craftcms/contact-form",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/contact-form.git",
-                "reference": "f606446dd9f86cb98dd66ec2c7df081cdff73c7a"
+                "reference": "a645df88d757d620bc29bc6dd3d748374b791093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/f606446dd9f86cb98dd66ec2c7df081cdff73c7a",
-                "reference": "f606446dd9f86cb98dd66ec2c7df081cdff73c7a",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/a645df88d757d620bc29bc6dd3d748374b791093",
+                "reference": "a645df88d757d620bc29bc6dd3d748374b791093",
                 "shasum": ""
             },
             "require": {
@@ -567,33 +567,30 @@
                 "form",
                 "yii2"
             ],
-            "time": "2019-04-03T16:45:22+00:00"
+            "time": "2019-05-31T22:56:39+00:00"
         },
         {
             "name": "craftcms/feed-me",
-            "version": "4.1.0",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/feed-me.git",
-                "reference": "0bc3e83f81b20813bc5806becd496d79b61b636a"
+                "reference": "38a4a02ab4ca0cfd21736a7156cb8a54c7d3001e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/0bc3e83f81b20813bc5806becd496d79b61b636a",
-                "reference": "0bc3e83f81b20813bc5806becd496d79b61b636a",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/38a4a02ab4ca0cfd21736a7156cb8a54c7d3001e",
+                "reference": "38a4a02ab4ca0cfd21736a7156cb8a54c7d3001e",
                 "shasum": ""
             },
             "require": {
-                "cakephp/core": "^3.5",
                 "cakephp/utility": "^3.3.12",
                 "craftcms/cms": "^3.1.21",
-                "guzzlehttp/guzzle": "~6.3.0",
                 "jakeasmith/http_build_url": "^1.0",
                 "league/csv": "^8.2 || ^9.0",
                 "nesbot/carbon": "^1.22 || ^2.10",
                 "ralouphie/mimey": "^1.0",
-                "seld/jsonlint": "^1.7",
-                "vlucas/phpdotenv": "^2.4"
+                "seld/jsonlint": "^1.7"
             },
             "require-dev": {
                 "codeception/codeception": "~2.3.3"
@@ -631,7 +628,7 @@
                 "craftcms",
                 "feed me"
             ],
-            "time": "2019-04-24T21:38:35+00:00"
+            "time": "2019-08-11T16:41:38+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -727,20 +724,20 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.3.3.2",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/redactor.git",
-                "reference": "55ee76494f6332ba5709003d2082e51d56ae8b1a"
+                "reference": "8fd0daca685309ad8635f28dca8c9ab2b3f228d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/55ee76494f6332ba5709003d2082e51d56ae8b1a",
-                "reference": "55ee76494f6332ba5709003d2082e51d56ae8b1a",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/8fd0daca685309ad8635f28dca8c9ab2b3f228d4",
+                "reference": "8fd0daca685309ad8635f28dca8c9ab2b3f228d4",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.1.0"
+                "craftcms/cms": "^3.2.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -771,7 +768,7 @@
                 "html",
                 "yii2"
             ],
-            "time": "2019-04-29T21:39:05+00:00"
+            "time": "2019-09-13T11:02:32+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -849,16 +846,16 @@
         },
         {
             "name": "dgrigg/craft-migration-assistant",
-            "version": "3.1.0.1",
+            "version": "3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dgrigg/craft-migration-assistant.git",
-                "reference": "73e7cab2012e54ae3f99b5b70e1785a20bb5e5f5"
+                "reference": "82f525cffb73bd23258eb5270e480a3a4cee931b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dgrigg/craft-migration-assistant/zipball/73e7cab2012e54ae3f99b5b70e1785a20bb5e5f5",
-                "reference": "73e7cab2012e54ae3f99b5b70e1785a20bb5e5f5",
+                "url": "https://api.github.com/repos/dgrigg/craft-migration-assistant/zipball/82f525cffb73bd23258eb5270e480a3a4cee931b",
+                "reference": "82f525cffb73bd23258eb5270e480a3a4cee931b",
                 "shasum": ""
             },
             "require": {
@@ -900,7 +897,7 @@
                 "migration assistant",
                 "migration manager"
             ],
-            "time": "2019-03-09T02:15:05+00:00"
+            "time": "2019-09-20T15:55:26+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1097,16 +1094,16 @@
         },
         {
             "name": "ether/tags",
-            "version": "1.0.2",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ethercreative/tags.git",
-                "reference": "d100367566d8d1d488d091555c32cce51d075f4f"
+                "reference": "cb8038bf257f40229f1e5763f61c88a6608e85c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ethercreative/tags/zipball/d100367566d8d1d488d091555c32cce51d075f4f",
-                "reference": "d100367566d8d1d488d091555c32cce51d075f4f",
+                "url": "https://api.github.com/repos/ethercreative/tags/zipball/cb8038bf257f40229f1e5763f61c88a6608e85c5",
+                "reference": "cb8038bf257f40229f1e5763f61c88a6608e85c5",
                 "shasum": ""
             },
             "require": {
@@ -1142,7 +1139,7 @@
                 "craftcms",
                 "tags"
             ],
-            "time": "2019-04-03T10:01:47+00:00"
+            "time": "2019-06-26T12:04:24+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -3447,20 +3444,20 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.1.18",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/super-table.git",
-                "reference": "95b05389cc200d674c54401e4a3d8b5fc70c0712"
+                "reference": "243a7c67a3e49156352f5d132e1a0183f3edcf39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/95b05389cc200d674c54401e4a3d8b5fc70c0712",
-                "reference": "95b05389cc200d674c54401e4a3d8b5fc70c0712",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/243a7c67a3e49156352f5d132e1a0183f3edcf39",
+                "reference": "243a7c67a3e49156352f5d132e1a0183f3edcf39",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.1.20"
+                "craftcms/cms": "^3.3.1.1"
             },
             "type": "craft-plugin",
             "extra": {
@@ -3494,7 +3491,7 @@
                 "craftcms",
                 "super table"
             ],
-            "time": "2019-04-24T05:38:57+00:00"
+            "time": "2019-09-11T10:36:16+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
