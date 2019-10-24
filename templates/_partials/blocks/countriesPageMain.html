@@ -16,6 +16,126 @@
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
     {% set producerEntriesByCountry = producerEntryQuery.relatedTo(craft.entries().section('countries').title(entry.title)) %}
     {% set regionTags = regionTagQuery.relatedTo(producerEntriesByCountry) %}
+    <section id="producersWithRegion" class="flex flex-wrap w-full pt-4 pr-4">
+    {% for entry in producerEntriesByCountry.all() %}
+    {% set producerName = entry.title %}
+    {% if entry.regionTag|length == 0 %}
+    <section id="producer" class="flex flex-row w-1/2 pt-4 pr-4">
+      <div id="producerImage" class="flex flex-col items-center w-1/3 ">
+        {% if entry.producerImage|length %}
+        {% set backgroundImage = entry.producerImage.one() %}
+        <div class="flex flex-col justify-center w-40 h-40 pl-2 pr-2 mr-2 bg-riseoverrunwine-blue rounded-full border-2 border-riseoverrunwine-blue text-gray-100" style="background: linear-gradient(
+            rgba(44, 55, 71, .5),
+            rgba(44, 55, 71, .5)
+          ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
+          <h4 id="producerName" class="text-md text-center font-muli font-bold uppercase">
+            {{ entry.title }}
+          </h4>
+        </div>
+        {% else %}
+        <div class="flex flex-col justify-center w-40 h-40 pl-2 pr-2 mr-2 bg-riseoverrunwine-blue text-gray-800 rounded-full border-2 border-gray-100">
+          <h4 id="producerName" class="text-md text-center font-muli font-bold uppercase">
+            {{ entry.title }}
+          </h4>
+        </div>
+        {% endif %}
+      </div>
+      <div id="producerInfo" class="w-2/3 mt-4">
+        <h4 id="producerDescription" class="text-md font-light font-zilla text-gray-200 pb-4">
+          {{ entry.producerDescription }}
+        </h4>
+        {% set wineEntries = craft.entries({
+        section: 'wines',
+        relatedTo: [
+        'and',
+        { targetElement: regionTag },
+        { targetElement: craft.entries().section('producers').title(producerName) }
+        ]
+        }) %}
+        {% for entry in wineEntries.all() %}
+        <h5 id="wineName" class="text-lg font-medium font-zilla text-gray-200">
+          {% if entry.wineType.value == 'red' %}
+          <i class="fas fa-circle text-red-700"></i>
+          {% endif %}
+          {% if entry.wineType.value == 'white' %}
+          <i class="fas fa-circle text-yellow-200"></i>
+          {% endif %}
+          {% if entry.wineType.value == 'rose' %}
+          <i class="fas fa-circle text-red-200"></i>
+          {% endif %}
+          {% if entry.wineType.value == 'orange' %}
+          <i class="fas fa-circle text-orange-300"></i>
+          {% endif %}
+          {% set wineName = entry.wineName ~ ' • '%}
+          {% set grapeName = entry.grape ~ ' • '%}
+          {{ wineName }}{{ grapeName }}{{ entry.vintage }}
+        </h5>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+    {% endfor %}
+    </section>
+    <section id="producersWithNoSubRegion" class="flex flex-wrap w-full pt-4 pr-4">
+    {% for entry in producerEntriesByRegion.all() %}
+    {% set producerName = entry.title %}
+    {% if entry.subRegionTag|length == 0 %}
+    <section id="producer" class="flex flex-row w-1/2 pt-4 pr-4">
+      <div id="producerImage" class="flex flex-col items-center w-1/3 ">
+        {% if entry.producerImage|length %}
+        {% set backgroundImage = entry.producerImage.one() %}
+        <div class="flex flex-col justify-center w-40 h-40 pl-2 pr-2 mr-2 bg-riseoverrunwine-blue rounded-full border-2 border-riseoverrunwine-blue text-gray-100" style="background: linear-gradient(
+            rgba(44, 55, 71, .5),
+            rgba(44, 55, 71, .5)
+          ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
+          <h4 id="producerName" class="text-md text-center font-muli font-bold uppercase">
+            {{ entry.title }}
+          </h4>
+        </div>
+        {% else %}
+        <div class="flex flex-col justify-center w-40 h-40 pl-2 pr-2 mr-2 bg-riseoverrunwine-blue text-gray-800 rounded-full border-2 border-gray-100">
+          <h4 id="producerName" class="text-md text-center font-muli font-bold uppercase">
+            {{ entry.title }}
+          </h4>
+        </div>
+        {% endif %}
+      </div>
+      <div id="producerInfo" class="w-2/3 mt-4">
+        <h4 id="producerDescription" class="text-md font-light font-zilla text-gray-200 pb-4">
+          {{ entry.producerDescription }}
+        </h4>
+        {% set wineEntries = craft.entries({
+        section: 'wines',
+        relatedTo: [
+        'and',
+        { targetElement: regionTag },
+        { targetElement: craft.entries().section('producers').title(producerName) }
+        ]
+        }) %}
+        {% for entry in wineEntries.all() %}
+        <h5 id="wineName" class="text-lg font-medium font-zilla text-gray-200">
+          {% if entry.wineType.value == 'red' %}
+          <i class="fas fa-circle text-red-700"></i>
+          {% endif %}
+          {% if entry.wineType.value == 'white' %}
+          <i class="fas fa-circle text-yellow-200"></i>
+          {% endif %}
+          {% if entry.wineType.value == 'rose' %}
+          <i class="fas fa-circle text-red-200"></i>
+          {% endif %}
+          {% if entry.wineType.value == 'orange' %}
+          <i class="fas fa-circle text-orange-300"></i>
+          {% endif %}
+          {% set wineName = entry.wineName ~ ' • '%}
+          {% set grapeName = entry.grape ~ ' • '%}
+          {{ wineName }}{{ grapeName }}{{ entry.vintage }}
+        </h5>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+    {% endfor %}
+    </section>
     {% for tag in regionTags.all() %}
     {% set regionTag = tag %}
     {% set producerEntriesByRegion = producerEntryQuery.relatedTo(regionTag) %}
