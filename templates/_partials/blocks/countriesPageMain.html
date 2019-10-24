@@ -19,7 +19,7 @@
     <section id="producersWithRegion" class="flex flex-wrap w-full pt-4 pr-4">
     {% for entry in producerEntriesByCountry.all() %}
     {% set producerName = entry.title %}
-    {% if entry.regionTag|length == 0 %}
+    {% if entry.regionsTag|length == 0 %}
     <section id="producer" class="flex flex-row w-1/2 pt-4 pr-4">
       <div id="producerImage" class="flex flex-col items-center w-1/3 ">
         {% if entry.producerImage|length %}
@@ -48,7 +48,7 @@
         section: 'wines',
         relatedTo: [
         'and',
-        { targetElement: regionTag },
+        { targetElement: regionsTag },
         { targetElement: craft.entries().section('producers').title(producerName) }
         ]
         }) %}
