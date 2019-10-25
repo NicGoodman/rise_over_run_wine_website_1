@@ -2,7 +2,7 @@
 {% for entry in craft.entries.section("countries").all() %}
 <a id="country" href="/countries/{{ entry.slug }}">
 <div class="flex flex-col justify-center w-32 h-32 xl:w-40 xl:h-40 m-2 p-2 bg-riseoverrunwine-blue rounded-full border-2 border-gray-500  text-gray-800 hover:border-riseoverrunwine-blue hover:bg-gray-800 hover:text-riseoverrunwine-blue">
-  <h1 id="countryName" class="text-lg text-center font-zilla font-bold uppercase">{{ entry.title }}</h1>
+  <h1 id="countryName" class="text-md lg:text-lg text-center font-zilla font-bold uppercase">{{ entry.title }}</h1>
 </div>
 </a>
 {% endfor %}
