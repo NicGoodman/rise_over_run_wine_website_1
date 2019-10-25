@@ -1,6 +1,6 @@
 {% block hero %}
 {% set backgroundImage = entry.heroImage.one() %}
-<div id="hero" class="flex flex-col mx-auto w-screen pl-16 pr-2 bg-bottom bg-cover" style="height: calc(100vh - 8rem); background-image: url('{{ backgroundImage.getUrl }}');">
+<div id="hero" class="flex flex-col mx-auto w-screen pl-4 md:pl-8 lg:pl-16 pr-2 bg-bottom bg-cover" style="height: calc(100vh - 8rem); background-image: url('{{ backgroundImage.getUrl }}');">
   {% if entry.heroHeading|length %}
   <h1 class="w-2/3 text-5xl font-black text-gray-800 font-muli">
     {{ entry.heroHeading }}
