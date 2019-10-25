@@ -2,7 +2,7 @@
 {% set eventEntryQuery = craft.entries().section('events') %}
 {% for entry in eventEntryQuery.all() %}
 {% set backgroundImage = entry.eventImage.one() %}
-<div id="eventBlock" class="flex flex-row w-full mb-8">
+<div id="eventBlock" class="flex flex-row mb-8">
   <div id="eventImage" class="flex flex-col justify-center w-20 h-20 xl:w-32 xl:h-32 ml-2 mr-2 bg-riseoverrunwine-blue rounded-full border-2 border-gray-500" style="background: linear-gradient(
       rgba(44, 55, 71, .45),
       rgba(44, 55, 71, .45)
