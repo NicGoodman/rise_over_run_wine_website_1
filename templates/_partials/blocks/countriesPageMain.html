@@ -15,11 +15,6 @@
 {% endif %}
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
     {% set producerEntriesByCountry = producerEntryQuery.relatedTo(craft.entries().section('countries').title(entry.title)) %}
-    {% set regionTags = regionTagQuery.relatedTo(producerEntriesByCountry) %}
-    {% for tag in regionTags.all() %}
-    {% set regionTag = tag %}
-
-
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
     {% for entry in producerEntriesByCountry.all() %}
     {% set producerName = entry.title %}
@@ -52,7 +47,6 @@
         section: 'wines',
         relatedTo: [
         'and',
-        { targetElement: regionsTag },
         { targetElement: craft.entries().section('producers').title(producerName) }
         ]
         }) %}
@@ -80,9 +74,9 @@
     {% endif %}
     {% endfor %}
     </section>
-
-
-
+    {% set regionTags = regionTagQuery.relatedTo(producerEntriesByCountry) %}
+    {% for tag in regionTags.all() %}
+    {% set regionTag = tag %}
     {% set producerEntriesByRegion = producerEntryQuery.relatedTo(regionTag) %}
     <section id="region" class="flex flex-col w-full">
       <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionTag.title }}</h2>
