@@ -16,8 +16,9 @@
 
 
   {% set producerEntriesByCountry = producerEntryQuery.relatedTo(craft.entries().section('countries').title(entry.title)) %}
+  {% set producerEntriesByCountryWithWines = producerEntriesByCountry.relatedTo(wineEntryQuery) %}
   <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
-    {% for entry in producerEntriesByCountry.all() %}
+    {% for entry in producerEntriesByCountryWithWines.all() %}
     {% set producerName = entry.title %}
     {% if (entry.regionsTag|length == 0) and (entry.altRegion1|length == 0) and (entry.altRegion2|length == 0) %}
     <section id="producer" class="flex flex-row w-1/2 pt-4 pr-4">
