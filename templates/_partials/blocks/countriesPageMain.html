@@ -81,8 +81,8 @@
   {% set regionTags = regionTagQuery.relatedTo(producerEntriesByCountry) %}
   {% for tag in regionTags.all() %}
   {% set regionTag = tag %}
-  {% set wineEntryQuery = craft.entries().section('wines').relatedTo(regionTag.title) %}
-  {% set producerEntriesByRegion = producerEntryQuery.relatedTo(regionTag.title) %}
+  {% set wineEntryQuery = craft.entries().section('wines').relatedTo(regionTag) %}
+  {% set producerEntriesByRegion = producerEntryQuery.relatedTo(regionTag) %}
   {% set producerEntriesByRegionWithWines = producerEntriesByRegion.relatedTo(wineEntryQuery) %}
   {% if (producerEntriesByRegionWithWines|length > 0) %}
   <div id="region" class="flex flex-col w-full">
