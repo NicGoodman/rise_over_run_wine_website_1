@@ -4,9 +4,13 @@
 {% set wineEntryQuery = craft.entries().section('wines') %}
 {% set producerEntryQuery = craft.entries().section('producers') %}
 
-{% if entry.heroImage|length %}
-{% set backgroundImage = entry.heroImage.one() %}
-  <section id="country" class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 bg-gray-800">
+
+<section id="country" {% if entry.heroImage|length %}
+{% set backgroundImage = entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
+    rgba(44, 55, 71, .5),
+    rgba(44, 55, 71, .5)
+  ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;" {% else %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 bg-gray-800" {% endif %}>
+
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
 
 
@@ -213,6 +217,6 @@
         </section>
         {% endfor %}
       </div>
-    </section>
     {% endfor %}
+  </section>
   {% endblock %}
