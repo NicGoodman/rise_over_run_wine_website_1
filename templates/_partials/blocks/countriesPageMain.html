@@ -81,8 +81,9 @@
     {% set regionTags = regionTagQuery.relatedTo(producerEntriesByCountry) %}
     {% for tag in regionTags.all() %}
     {% set regionTag = tag %}
+    {% set wineEntryQuery = craft.entries().section('wines').relatedTo(regionTag) %}
     {% set producerEntriesByRegion = producerEntryQuery.relatedTo(regionTag) %}
-    {% set producerEntriesByRegionWithWines = producerEntriesByRegion.relatedTo(WineEntryQuery) %}
+    {% set producerEntriesByRegionWithWines = producerEntriesByRegion.relatedTo(wineEntryQuery) %}
     {% if (producerEntriesByRegionWithWines > 0) %}
     <div id="region" class="flex flex-col w-full">
       <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionTag.title }}</h2>
