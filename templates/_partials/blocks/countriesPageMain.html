@@ -82,7 +82,6 @@
     {% for tag in regionTags.all() %}
     {% set regionTag = tag %}
     {% set producerEntriesByRegion = producerEntryQuery.relatedTo(regionTag) %}
-    {% if (wineEntries|length > 0) %}
     <div id="region" class="flex flex-col w-full">
       <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionTag.title }}</h2>
       <section id="producersWtihNoSubRegion" class="flex flex-wrap w-full pt-4 pr-4">
@@ -146,7 +145,6 @@
       {% endfor %}
       </section>
       </div>
-      {% endif %}
 
 
 
