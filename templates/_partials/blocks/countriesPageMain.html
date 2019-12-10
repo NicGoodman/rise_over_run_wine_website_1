@@ -16,8 +16,8 @@
 
 
   {% set producerEntriesByCountry = producerEntryQuery.relatedTo(craft.entries().section('countries').title(entry.title)) %}
-  {% set wineEntryQueryWithTags = wineEntryQuery.relatedTo([ 'and', { targetElement: subRegionTagQuery}, {targetElement: regionTagQuery}]) %}
-  {% set producerEntriesByCountryWithWines = producerEntriesByCountry.relatedTo(wineEntryQueryWithTags) %}
+
+  {% set producerEntriesByCountryWithWines = producerEntriesByCountry.relatedTo(wineEntryQuery) %}
   <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
     {% for entry in producerEntriesByCountryWithWines.all() %}
     {% set producerName = entry.title %}
