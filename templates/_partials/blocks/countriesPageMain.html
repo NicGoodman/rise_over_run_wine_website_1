@@ -84,7 +84,7 @@
   {% set wineEntryQuery = craft.entries().section('wines').relatedTo(regionTag) %}
   {% set producerEntriesByRegion = producerEntryQuery.relatedTo(regionTag) %}
   {% set producerEntriesByRegionWithWines = producerEntriesByRegion.relatedTo(wineEntryQuery) %}
-  {% if (producerEntriesByRegionWithWines|length > 0) %}
+  {% if (producerEntriesByRegionWithWines|length) %}
   <div id="region" class="flex flex-col w-full">
     <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionTag.title }}</h2>
     <section id="producersWtihNoSubRegion" class="flex flex-wrap w-full pt-4 pr-4">
