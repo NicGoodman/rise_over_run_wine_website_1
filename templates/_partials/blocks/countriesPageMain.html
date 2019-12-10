@@ -139,7 +139,7 @@
 
 
   <div id="subRegions" class="flex flex-row justify-end">
-    {% set subRegionTags = subRegionTagQuery.relatedTo(wineEntriesWithSubRegion) %}
+    {% set subRegionTags = subRegionTagQuery.relatedTo(producerEntriesByRegion) %}
     {% for tag in subRegionTags.all() %}
     {% set subRegionTag = tag %}
     <section id="subRegion" class="flex flex-col w-1/2 p-4">
