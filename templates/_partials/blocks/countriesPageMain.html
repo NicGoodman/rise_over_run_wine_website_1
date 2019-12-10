@@ -112,7 +112,7 @@
           <h4 id="producerDescription" class="text-md font-light font-zilla text-gray-200 pb-4">
             {{ entry.producerDescription }}
           </h4>
-          {% for entry in wineEntries.relatedTo('regionTag').all() %}
+          {% for entry in wineEntries.all() %}
           <h5 id="wineName" class="text-lg font-medium font-zilla text-gray-200">
             {% if entry.wineType.value == 'red' %}
             <i class="fas fa-circle text-red-700"></i>
