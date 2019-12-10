@@ -78,7 +78,7 @@
     {% endfor %}
   </section>
 
-  {% set wineEntriesWithRegion = craft.entries().section('wines').regionsTag(':notempty:').subRegionsTag(':empty:').relatedTo(craft.entries().section('countries').title(entry.title)) %}
+  {% set wineEntriesWithRegion = craft.entries().section('wines').regionsTag(':notempty:').subRegionTag(':empty:').relatedTo(craft.entries().section('countries').title(entry.title)) %}
 
   {% set regionTags = regionTagQuery.relatedTo(wineEntriesWithRegion) %}
   {% for tag in regionTags.all() %}
