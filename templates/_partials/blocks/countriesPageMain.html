@@ -49,17 +49,9 @@
         <section id="subRegion" class="flex flex-col w-1/2 p-4">
           <h3 id="subRegionName" class="w-full self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500">{{ subRegionName.title }}</h3>
 
-          {% for entry in allProducersInCountry.relatedTo(regionName).all() %}
-            {% set producerName = entry.title %}
-            {% set producerWines = craft.entries().section('wines').subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)).relatedTo(regionName) %}
-            {% if producerWines is empty %}
-            {% else %}
-              {% include "_partials/blocks/producerBlock" %}
-              {{ block('producer') }}
-            {% endif %}
-          {% endfor %}
 
 
+          </section>
         {% endfor %}
       {% endfor %}
     </section>
