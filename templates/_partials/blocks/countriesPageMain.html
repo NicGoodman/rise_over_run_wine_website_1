@@ -7,6 +7,7 @@
   {% set allProducersQuery = craft.entries().section('producers') %}
 
   {% set allProducersInCountry = allProducersQuery.relatedTo(craft.entries().section('countries').title(countryName)) %}
+  {% set allWinesInCountry = allWinesQuery.relatedTo(craft.entries().section('countries').title(countryName)) %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
@@ -25,7 +26,7 @@
     </section>
 
     <section id="regions" class="">
-      {% set regions = allRegionsQuery.relatedTo(allProducersInCountry) %}
+      {% set regions = allRegionsQuery.relatedTo(allWinesInCountry) %}
 
       {% for tag in regions.all() %}
       {% set regionName = tag %}
