@@ -1,5 +1,4 @@
 {% block main %}
-{% include "_partials/blocks/producerBlock" %}
   {% set countryName = entry.title %}
   {% set allRegionsQuery = craft.tags().group('regions') %}
   {% set allSubRegionsQuery = craft.tags().group('subRegions') %}
@@ -18,9 +17,8 @@
       {% for entry in allProducersInCountry.all() %}
       {% set producerName = entry.title %}
       {% set producerWines = allWinesQuery.relatedTo(allProducersInCountry.title(producerName)) %}
-
-      {% block producer %}
-      {% endblock %}
+      {% include "_partials/blocks/producerBlock" %}
+      {% block producer %}{% endblock %}
 
       {% endfor %}
     </section>
