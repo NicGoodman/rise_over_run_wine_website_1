@@ -45,7 +45,7 @@
         {% set winesBySubRegions = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(craft.entries().section('countries').title(countryName)).relatedTo(regionName) %}
 
         {% for entry in winesBySubRegions %}
-          entry
+          {{ subRegionTag.title }}
         {% endfor %}
 
 
