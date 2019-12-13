@@ -16,7 +16,7 @@
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
       {% for entry in allProducersInCountry.all() %}
         {% set producerName = entry.title %}
-        {% set producerWines = allWinesQuery.relatedTo(allProducersInCountry.title(producerName)) %}
+        {% set producerWines = allWinesQuery.subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)) %}
         {% if producerWines is empty %}
           empty
         {% else %}
@@ -41,6 +41,8 @@
             {{ block('producer') }}
           {% endif %}
         {% endfor %}
+
+
         {% set subRegions = allSubRegionsQuery %}
         {% for tag in subRegions.all() %}
           {{ tag.title }}
