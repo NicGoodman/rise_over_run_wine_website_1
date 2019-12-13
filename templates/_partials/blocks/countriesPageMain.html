@@ -27,8 +27,8 @@
       {% set regions = allRegionsQuery.relatedTo(allWinesInCountry) %}
       {% for tag in regions.all() %}
         {% set regionName = tag %}
-        {{ regionName.title }}
-        {% set winesWithNoSubRegion = allWinesInCountry.subRegionTag(':empty:').relatedTo(regionName) %}
+        <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
+        {% set winesWithNoSubRegion = allWinesQuery.subRegionTag(':empty:').relatedTo(regionName) %}
         {% for entry in allProducersInCountry.relatedTo('winesWithNoSubRegion') %}
           {% set producerName = entry.title %}
           {% set producerWines = allWinesQuery.subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)) %}
