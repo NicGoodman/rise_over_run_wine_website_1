@@ -6,13 +6,14 @@
   {% set allWines = craft.entries().section('wines') %}
   {% set allProducers = craft.entries().section('producers') %}
 
-  {% set allProducersInCountry = allProducers.relatedTo(craft.entries().section('countries').title('country')) %}
+  {% set allProducersInCountry = allProducers.relatedTo(craft.entries().section('countries').title(entry.title)) %}
   {% set allRegionsInCountry = allRegions.relatedTo('allProducersInCountry') %}
   {% set allSubRegionsInCountry = allSubRegions.relatedTo('allProducersInCountry') %}
   {% set allWinesInCountry = allWines.relatedTo('allProducersInCountry') %}
 
   {% set winesWithNoRegion = allWines.regionsTag(':empty:') %}
   {% set producersWithWinesWithNoRegion = allProducersInCountry.relatedTo('winesWithNoRegion') %}
+
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
