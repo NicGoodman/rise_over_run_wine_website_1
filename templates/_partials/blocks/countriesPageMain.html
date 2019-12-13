@@ -75,7 +75,7 @@
   </section>
 
 
-  {% for tag in allRegionsInCountry.all() %}
+  {% for tag in allRegionsInCountry %}
 
   {% set region = tag %}
   {% set winesInRegion = allWinesInCountry.relatedTo('region') %}
