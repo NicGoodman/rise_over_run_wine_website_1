@@ -25,10 +25,16 @@
 
     <section id="regions" class="">
       {% set regions = allRegionsQuery.relatedTo(allWinesInCountry) %}
-
       {% for tag in regions.all() %}
-      {% set regionName = tag %}
+        {% set regionName = tag %}
         {{ regionName.title }}
+        {% set winesWithNoSubRegion = allWinesInCountry.subRegionTag(':empty:').relatedTo(regionName) %}
+        {% for entry in allProducersInCountry.relatedTo('winesWithNoSubRegion') %}
+          {% set producerName = entry.title %}
+          {% set producerWines = allWinesQuery.subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)) %}
+          {% include "_partials/blocks/producerBlock" %}
+          {% block producer %}{% endblock %}
+        {% endfor %}
       {% endfor %}
     </section>
   </section>
