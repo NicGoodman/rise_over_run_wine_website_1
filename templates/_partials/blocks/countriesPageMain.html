@@ -33,7 +33,7 @@
           {% set producerName = entry.title %}
           {% set producerWines = allWinesQuery.subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)) %}
           {% include "_partials/blocks/producerBlock" %}
-          {% block producer %}{% endblock %}
+          {{ block('producer') }}
         {% endfor %}
       {% endfor %}
     </section>
