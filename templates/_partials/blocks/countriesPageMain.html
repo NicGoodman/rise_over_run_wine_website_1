@@ -42,9 +42,10 @@
           {% endif %}
         {% endfor %}
 
-        {% set subRegions = allSubRegionsQuery.relatedTo(allWinesInCountry).relatedTo(regionName) %}
-        {% for tag in subRegions.all() %}
-          {{ tag.title }}
+        {% set winesBySubRegions = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(craft.entries().section('countries').title(countryName)).relatedTo(regionName) %}
+
+        {% for entry in winesBySubRegions %}
+          {{ entry.subRegionTag.title }}
         {% endfor %}
 
 
