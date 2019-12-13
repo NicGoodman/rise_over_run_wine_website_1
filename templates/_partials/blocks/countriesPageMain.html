@@ -42,8 +42,7 @@
           {% endif %}
         {% endfor %}
 
-
-        {% set subRegions = allSubRegionsQuery %}
+        {% set subRegions = allSubRegionsQuery.relatedTo(allWinesInCountry).relatedTo(regionName) %}
         {% for tag in subRegions.all() %}
           {{ tag.title }}
         {% endfor %}
