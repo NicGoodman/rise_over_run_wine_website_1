@@ -5,7 +5,7 @@
   {% set allWinesQuery = craft.entries().section('wines') %}
   {% set allProducersQuery = craft.entries().section('producers') %}
 
-  {% set allProducersInCountry = allProducersQuery.relatedTo(craft.entries().section('countries').title(entry.title)) %}
+  {% set allProducersInCountry = allProducersQuery.relatedTo(craft.entries().section('countries').title(entry.title)).all() %}
   {% set allRegionsInCountry = allRegionsQuery.relatedTo('allProducersInCountry').all() %}
   {% set allSubRegionsInCountry = allSubRegionsQuery.relatedTo('allProducersInCountry').all() %}
   {% set allWinesInCountry = allWinesQuery.relatedTo('allProducersInCountry').all() %}
@@ -23,7 +23,7 @@
 
 
   <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
-    {% for entry in allProducersInCountry.all() %}
+    {% for entry in allProducersInCountry %}
     {% set producerName = entry.title %}
     {% set producerWines = winesWithNoRegion.relatedTo('producerName') %}
     <section id="producer" class="flex flex-row w-1/2 pt-4 pr-4">
