@@ -5,18 +5,13 @@
   {% set allWinesQuery = craft.entries().section('wines') %}
   {% set allProducersQuery = craft.entries().section('producers') %}
 
-  {% set allRegions = allRegionsQuery.all() %}
-  {% set allSubRegions = allSubRegionsQuery.all() %}
-  {% set allWines = allWinesQuery.all() %}
-  {% set allProducers = allProducersQuery.all() %}
+  {% set allProducersInCountry = allProducersQuery.relatedTo(craft.entries().section('countries').title(entry.title)) %}
+  {% set allRegionsInCountry = allRegionsQuery.relatedTo('allProducersInCountry').all() %}
+  {% set allSubRegionsInCountry = allSubRegionsQuery.relatedTo('allProducersInCountry').all() %}
+  {% set allWinesInCountry = allWinesQuery.relatedTo('allProducersInCountry').all() %}
+  {% set allWinesWithNoRegion = allWinesQuery.relatedTo('allProducersInCountry').regionsTag(':empty:').all() %}
 
-  {% set allProducersInCountry = allProducers.relatedTo(craft.entries().section('countries').title(entry.title)) %}
-  {% set allRegionsInCountry = allRegions.relatedTo('allProducersInCountry') %}
-  {% set allSubRegionsInCountry = allSubRegions.relatedTo('allProducersInCountry') %}
-  {% set allWinesInCountry = allWines.relatedTo('allProducersInCountry') %}
-
-  {% set winesWithNoRegion = allWines.regionsTag(':empty:') %}
-  {% set producersWithWinesWithNoRegion = allProducersInCountry.relatedTo('winesWithNoRegion') %}
+  {% set producersWithWinesWithNoRegion = allProducersInCountry.relatedTo('winesWithNoRegion').all() %}
 
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
