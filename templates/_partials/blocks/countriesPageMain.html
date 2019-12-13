@@ -61,6 +61,16 @@
           {% endfor %}
         </div>
       </section>
-    {% endfor %}
+      {% endfor %}
+    </section>
+
+    <section id="regions" class="">
+      {% set regions = allRegionsQuery.relatedTo(allProducersInCountry) %}
+      
+      {% for tag in regions.all() %}
+      {% set regionName = tag %}
+        {{ regionName.title }}
+      {% endfor %}
+    </section>
   </section>
 {% endblock %}
