@@ -33,10 +33,20 @@
           {% set producerWines = allWinesQuery.subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)).relatedTo(regionName) %}
           {% if producerWines is empty %}
           {% else %}
-          {% include "_partials/blocks/producerBlock" %}
-          {{ block('producer') }}
+            {% include "_partials/blocks/producerBlock" %}
+            {{ block('producer') }}
           {% endif %}
         {% endfor %}
+        {% set subRegions = allSubRegionsQuery.relatedTo(regionName) %}
+        {% for tag in subRegions.all() %}
+        {{ tag.title }}
+        {% endfor %}
+
+
+
+
+
+
       {% endfor %}
     </section>
   </section>
