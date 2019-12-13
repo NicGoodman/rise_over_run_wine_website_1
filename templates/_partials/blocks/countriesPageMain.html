@@ -51,7 +51,7 @@
 
           {% for entry in allProducersInCountry.relatedTo(subRegionName).all() %}
             {% set producerName = entry.title %}
-            {% set producerWines = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(allProducersInCountry.title(producerName)).relatedTo(regionName).relatedTo(subRegionName) %}
+            {% set producerWines = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(allProducersInCountry.title(producerName)).relatedTo(regionName) %}
             {% if producerWines is empty %}
             {% else %}
               {% include "_partials/blocks/producerBlock" %}
