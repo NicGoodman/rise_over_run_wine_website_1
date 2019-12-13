@@ -17,12 +17,11 @@
       {% for entry in allProducersInCountry.all() %}
       {% set producerName = entry.title %}
       {% set producerWines = allWinesQuery.regionsTag(':empty:').relatedTo(allProducersInCountry.title(producerName)) %}
-      {% if producerWines is empty %}
-      {% else %}
-      {% include "_partials/blocks/producerBlock" %}
-      {% block producer %}{% endblock %}
-      {% endif %}
-
+        {% if producerWines is empty %}
+        {% else %}
+          {% include "_partials/blocks/producerBlock" %}
+          {% block producer %}{% endblock %}
+        {% endif %}
       {% endfor %}
     </section>
 
