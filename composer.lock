@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6981e886f2f182ac072fbeced499fe2e",
+    "content-hash": "1ff8fe78f8b27cf038ad671613f2113a",
     "packages": [
         {
             "name": "cakephp/core",
@@ -1715,6 +1715,59 @@
                 "shell"
             ],
             "time": "2019-09-15T07:36:45+00:00"
+        },
+        {
+            "name": "nav33d/craft-relations",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nav33d/craft-relations.git",
+                "reference": "3b8df1a31b3871a7d6bf8a25fbb468ccb50b62da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nav33d/craft-relations/zipball/3b8df1a31b3871a7d6bf8a25fbb468ccb50b62da",
+                "reference": "3b8df1a31b3871a7d6bf8a25fbb468ccb50b62da",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Relations",
+                "handle": "relations",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nav33d/craft-relations/v1/CHANGELOG.md",
+                "class": "nav33d\\relations\\Relations"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nav33d\\relations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Naveed Ziarab",
+                    "homepage": "https://naveedziarab.co.uk/"
+                }
+            ],
+            "description": "A field type to show reverse related elements",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "craftcms3",
+                "relations"
+            ],
+            "time": "2019-09-02T20:41:46+00:00"
         },
         {
             "name": "nesbot/carbon",
