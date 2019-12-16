@@ -1,6 +1,9 @@
 {% block eventsList%}
 {% set eventEntryQuery = craft.entries().section('events') %}
-{% for entry in eventEntryQuery.all() %}
+{% if eventEntryQuery.all() is empty %}
+<h1 id="eventTitle" class="text-lg text-center font-muli font-black uppercase text-gray-800">No Upcoming Events</h1>
+{% else %}
+{% for entry in eventEntryQuery.all() if entry.postDate|date('Y-m-d') > now|date('Y-m-d') %}
 {% set backgroundImage = entry.eventImage.one() %}
 <div id="eventBlock" class="flex w-full flex-row mb-8">
   <div id="eventImage" class="flex flex-col flex-shrink-0 justify-center w-24 h-24 xl:w-32 xl:h-32 ml-2 mr-2 bg-riseoverrunwine-blue rounded-full border-2 border-gray-500" style="background: linear-gradient(
@@ -20,4 +23,5 @@
   </div>
 </div>
 {% endfor %}
+{% endif %}
 {% endblock %}
