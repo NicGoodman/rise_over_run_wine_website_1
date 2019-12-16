@@ -5,7 +5,7 @@
   {% set allWinesQuery = craft.entries().section('wines') %}
   {% set allProducersQuery = craft.entries().section('producers') %}
 
-  {% set allProducersInCountry = allProducersQuery.relatedTo(craft.entries().section('countries').title(countryName)) %}
+  {% set allProducersInCountry = craft.entries().section('producers').relatedTo(craft.entries().section('countries').title(countryName)) %}
   {% set allWinesInCountry = craft.entries().section('wines').relatedTo(craft.entries().section('countries').title(countryName)) %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
@@ -26,7 +26,7 @@
     </section>
 
     <section id="regions" class="">
-      {% set regions = allRegionsQuery.relatedTo(allWinesInCountry) %}
+      {% set regions = craft.tags().group('regions').relatedTo(allWinesInCountry) %}
       {% for tag in regions.all() %}
         {% set regionName = tag %}
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
@@ -52,7 +52,7 @@
 
         {% set winesBySubRegions = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(craft.entries().section('countries').title(countryName)).relatedTo(regionName) %}
 
-        {% set subRegions = allSubRegionsQuery.relatedTo(winesBySubRegions) %}
+        {% set subRegions = craft.tags().group('subRegions').relatedTo(winesBySubRegions) %}
         {% for tag in subRegions.all() %}
         {% set subRegionName = tag %}
         <section id="subRegion" class="flex flex-col w-1/2 p-4">
