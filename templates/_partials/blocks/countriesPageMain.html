@@ -16,15 +16,8 @@
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
       {% for entry in allProducersInCountry.all() %}
         {% set producerName = entry.title %}
-        {% set producerWines = craft.entries({
-        section: 'wines',
-        regionsTag: ':empty:',
-        relatedTo: [
-        'and',
-        { targetElement: regionName },
-        { targetElement: allProducersInCountry.title(producerName) }
-        ]
-        }) %}
+        {% set producerWines = craft.entries().section('wines').regionsTag(':empty:').relatedTo(allProducersInCountry.title(producerName)) %}
+
         {% if producerWines is empty %}
         {% else %}
           {% include "_partials/blocks/producerBlock" %}
@@ -38,6 +31,7 @@
       {% for tag in regions.all() %}
         {% set regionName = tag %}
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
+
         {% for entry in allProducersInCountry.relatedTo(regionName).all() %}
           {% set producerName = entry.title %}
           {% set producerWines = craft.entries({
@@ -58,16 +52,6 @@
         {% endfor %}
 
         {% set winesBySubRegions = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(craft.entries().section('countries').title(countryName)).relatedTo(regionName) %}
-
-        {% set winesBySubRegions = craft.entries({
-        section: 'wines',
-        subRegionTag: ':notempty:',
-        relatedTo: [
-        'and',
-        { targetElement: regionName },
-        { targetElement: craft.entries().section('countries').title(countryName) }
-        ]
-        }) %}
 
         {% set subRegions = allSubRegionsQuery.relatedTo(winesBySubRegions) %}
         {% for tag in subRegions.all() %}
