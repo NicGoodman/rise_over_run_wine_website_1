@@ -1,5 +1,4 @@
 {% block main %}
-{% cache %}
   {% set countryName = entry.title %}
   {% set allProducers = craft.entries().section('producers') %}
   {% set allWinesInCountry = craft.entries().section('wines').relatedTo(craft.entries().section('countries').title(countryName)) %}
@@ -80,5 +79,4 @@
       {% endfor %}
     </section>
   </section>
-  {% endcache %}
 {% endblock %}
