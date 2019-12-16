@@ -26,7 +26,7 @@
         {% set regionName = tag %}
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
 
-        {% for entry in allProducersInCountry.relatedTo(regionName).all() %}
+        {% for entry in allProducersInCountry.all() %}
           {% set producerName = entry.title %}
           {% set producerWines = craft.entries({
           section: 'wines',
@@ -53,7 +53,7 @@
         <section id="subRegion" class="flex flex-col w-1/2 p-4">
           <h3 id="subRegionName" class="w-full self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500">{{ subRegionName.title }}</h3>
 
-          {% for entry in allProducersInCountry.relatedTo(subRegionName).all() %}
+          {% for entry in allProducersInCountry.all() %}
             {% set producerName = entry.title %}
 
             {% set producerWines = craft.entries({
