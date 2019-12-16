@@ -32,7 +32,7 @@
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
         {% for entry in allProducersInCountry.relatedTo(regionName).all() %}
           {% set producerName = entry.title %}
-          {% set producerWines = craft.entries().section('wines').subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)).relatedTo(regionName) %}
+          {% set producerWines = craft.entries().section('wines').subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)).regionsTag.title(regionName) %}
           {% if producerWines is empty %}
           {% else %}
             {% include "_partials/blocks/producerBlock" %}
