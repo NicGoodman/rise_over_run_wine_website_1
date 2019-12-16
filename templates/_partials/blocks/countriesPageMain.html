@@ -44,7 +44,7 @@
         {% set winesBySubRegions = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(craft.entries().section('countries').title(countryName)).relatedTo(regionName) %}
 
         {% set subRegions = allSubRegionsQuery.relatedTo(winesBySubRegions) %}
-        {% for tag in subRegions %}
+        {% for tag in subRegions.all() %}
         {% set subRegionName = tag %}
         <section id="subRegion" class="flex flex-col w-1/2 p-4">
           <h3 id="subRegionName" class="w-full self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500">{{ subRegionName.title }}</h3>
