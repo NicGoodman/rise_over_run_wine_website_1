@@ -1,6 +1,7 @@
 {% block main %}
+{% cache %}
   {% set countryName = entry.title %}
-  {% set allProducersInCountry = craft.entries().section('producers') %}
+  {% set allProducers = craft.entries().section('producers') %}
   {% set allWinesInCountry = craft.entries().section('wines').relatedTo(craft.entries().section('countries').title(countryName)) %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
@@ -9,7 +10,7 @@
     {% else %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 bg-gray-800" {% endif %}>
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
-      {% for entry in allProducersInCountry.all() %}
+      {% for entry in allProducers.all() %}
         {% set producerName = entry.title %}
         {% set producerWines = craft.entries().section('wines').regionsTag(':empty:').relatedTo(craft.entries().section('producers').title(producerName)) %}
         {% if producerWines is empty %}
@@ -26,7 +27,7 @@
         {% set regionName = tag %}
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
 
-        {% for entry in allProducersInCountry.all() %}
+        {% for entry in allProducers.all() %}
           {% set producerName = entry.title %}
           {% set producerWines = craft.entries({
           section: 'wines',
@@ -53,7 +54,7 @@
         <section id="subRegion" class="flex flex-col w-1/2 p-4">
           <h3 id="subRegionName" class="w-full self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500">{{ subRegionName.title }}</h3>
 
-          {% for entry in allProducersInCountry.all() %}
+          {% for entry in allProducers.all() %}
             {% set producerName = entry.title %}
 
             {% set producerWines = craft.entries({
@@ -79,4 +80,5 @@
       {% endfor %}
     </section>
   </section>
+  {% endcache %}
 {% endblock %}
