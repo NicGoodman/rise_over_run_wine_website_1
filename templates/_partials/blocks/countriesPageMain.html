@@ -11,7 +11,6 @@
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
       {% for entry in allProducers.all() %}
         {% set producerName = entry.title %}
-        {% set producerWines = craft.entries().section('wines').regionsTag(':empty:').relatedTo(craft.entries().section('producers').title(producerName)) %}
 
         {% set producerWines = craft.entries({
         section: 'wines',
@@ -19,7 +18,6 @@
         regionsTag: ':empty:',
         relatedTo: [
         'and',
-        { targetElement: regionName },
         { targetElement: craft.entries().section('producers').title(producerName) },
         { targetElement: craft.entries().section('countries').title(countryName) }
         ]
