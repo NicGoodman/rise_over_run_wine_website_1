@@ -32,7 +32,7 @@
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
         {% for entry in allProducersInCountry.relatedTo(regionName).all() %}
           {% set producerName = entry.title %}
-          {% set producerWines = craft.entries().section('wines').subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)).regionsTag.title(regionName) %}
+          {% set producerWines = craft.entries().section('wines').subRegionTag(':empty:').relatedTo(allProducersInCountry.title(producerName)).relatedTo(regionName) %}
           {% if producerWines is empty %}
           {% else %}
             {% include "_partials/blocks/producerBlock" %}
@@ -50,7 +50,7 @@
 
           {% for entry in allProducersInCountry.relatedTo(subRegionName).all() %}
             {% set producerName = entry.title %}
-            {% set producerWines = winesBySubRegions.relatedTo(allProducersInCountry.title(producerName)).relatedTo(subRegionName) %}
+            {% set producerWines = craft.entries().section('wines').subRegionTag(':notempty:').relatedTo(allProducersInCountry.title(producerName)).relatedTo(subRegionName) %}
             {% if producerWines is empty %}
             {% else %}
               {% include "_partials/blocks/producerBlock" %}
