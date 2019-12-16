@@ -6,7 +6,7 @@
   {% set allProducersQuery = craft.entries().section('producers') %}
 
   {% set allProducersInCountry = allProducersQuery.relatedTo(craft.entries().section('countries').title(countryName)) %}
-  {% set allWinesInCountry = allWinesQuery.relatedTo(craft.entries().section('countries').title(countryName)) %}
+  {% set allWinesInCountry = craft.entries().section('wines').relatedTo(craft.entries().section('countries').title(countryName)) %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
@@ -16,7 +16,7 @@
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
       {% for entry in allProducersInCountry.all() %}
         {% set producerName = entry.title %}
-        {% set producerWines = craft.entries().section('wines').regionsTag(':empty:').relatedTo(allProducersInCountry.title(producerName)) %}
+        {% set producerWines = craft.entries().section('wines').regionsTag(':empty:').relatedTo(craft.entries().section('producers').title(producerName)) %}
         {% if producerWines is empty %}
         {% else %}
           {% include "_partials/blocks/producerBlock" %}
@@ -39,7 +39,7 @@
           relatedTo: [
           'and',
           { targetElement: regionName },
-          { targetElement: allProducersInCountry.title(producerName) }
+          { targetElement: craft.entries().section('producers').title(producerName) }
           ]
           }) %}
 
@@ -68,7 +68,7 @@
             'and',
             { targetElement: regionName },
             { targetElement: subRegionName },
-            { targetElement: allProducersInCountry.title(producerName) }
+            { targetElement: craft.entries().section('producers').title(producerName) }
             ]
             }) %}
 
