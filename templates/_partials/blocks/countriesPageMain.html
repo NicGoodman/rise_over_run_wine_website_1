@@ -1,10 +1,5 @@
 {% block main %}
   {% set countryName = entry.title %}
-  {% set allRegionsQuery = craft.tags().group('regions') %}
-  {% set allSubRegionsQuery = craft.tags().group('subRegions') %}
-  {% set allWinesQuery = craft.entries().section('wines') %}
-  {% set allProducersQuery = craft.entries().section('producers') %}
-
   {% set allProducersInCountry = craft.entries().section('producers').relatedTo(craft.entries().section('countries').title(countryName)) %}
   {% set allWinesInCountry = craft.entries().section('wines').relatedTo(craft.entries().section('countries').title(countryName)) %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
