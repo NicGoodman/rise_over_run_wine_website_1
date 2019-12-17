@@ -22,7 +22,7 @@
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;"
     {% else %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 bg-gray-800" {% endif %}>
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
-    <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
+    <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4 justify-center">
       {% for entry in allProducers.all() %}
         {% set producerName = entry.title %}
         {% set producerDescription = entry.producerDescription|nl2br %}
@@ -38,8 +38,10 @@
         }) %}
         {% if producerWines is empty %}
         {% else %}
+        <div id="producersWithNoRegionBlock" class="w-1/2">
           {% include "_partials/blocks/producerBlock" %}
           {% block producer %}{% endblock %}
+          </div>
         {% endif %}
       {% endfor %}
     </section>
@@ -64,8 +66,10 @@
 
           {% if producerWines is empty %}
           {% else %}
+          <div id="producersWithRegionBlock" class="w-1/2">
             {% include "_partials/blocks/producerBlock" %}
             {{ block('producer') }}
+            </div>
           {% endif %}
         {% endfor %}
 
