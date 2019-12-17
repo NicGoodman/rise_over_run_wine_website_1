@@ -46,7 +46,7 @@
       {% endfor %}
     </section>
 
-    <section id="regions" class="">
+    <section id="regions" class="w-full flex-wrap">
       {% set regions = craft.tags().group('regions').relatedTo(allWinesInCountry) %}
       {% for tag in regions.all() %}
         {% set regionName = tag %}
