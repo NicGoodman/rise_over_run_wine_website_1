@@ -38,7 +38,7 @@
         }) %}
         {% if producerWines is empty %}
         {% else %}
-        <div id="producersWithNoRegionBlock" class="w-1/2">
+        <div id="producersWithNoRegionBlock" class="w-full md:w-2/3">
           {% include "_partials/blocks/producerBlock" %}
           {% block producer %}{% endblock %}
           </div>
@@ -66,8 +66,8 @@
 
           {% if producerWines is empty %}
           {% else %}
-          <div id="producersWithRegionBlock" class="w-full flex flex-wrap">
-            <div id="producerWrapper" class="self-center w-1/2">
+          <div id="producersWithRegionBlock" class="w-full flex flex-wrap justify-center">
+            <div id="producerWrapper" class="w-full md:w-2/3">
             {% include "_partials/blocks/producerBlock" %}
             {{ block('producer') }}
             </div>
