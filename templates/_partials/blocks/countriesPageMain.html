@@ -2,7 +2,8 @@
   {% set countryName = entry.title %}
 {% cache %}
   {% set allProducers = craft.entries({
-  section: 'producers' %}
+  section: 'producers'
+  }) %}
 
   {% set allWinesInCountry = craft.entries({
   section: 'wines',
