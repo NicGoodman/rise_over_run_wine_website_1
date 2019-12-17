@@ -51,7 +51,7 @@
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
         {% for entry in allProducers.all() %}
           {% set producerName = entry.title %}
-          {% set producerDescription = entry.producerDescription[0] %}
+          {% set producerDescription = entry.producerDescription[0] ?? null %}
           {% set producerWines = craft.entries({
           section: 'wines',
           subRegionTag: ':empty:',
