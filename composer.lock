@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4deac128f9ca0ea1e56c443a841eb477",
+    "content-hash": "693be11ff97401edf24cbcf1bc11b2d2",
     "packages": [
         {
             "name": "bolden/htmlcache",
@@ -1737,6 +1737,50 @@
             "time": "2019-09-15T07:36:45+00:00"
         },
         {
+            "name": "mtdowling/cron-expression",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mtdowling/cron-expression.git",
+                "reference": "9504fa9ea681b586028adaaa0877db4aecf32bad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mtdowling/cron-expression/zipball/9504fa9ea681b586028adaaa0877db4aecf32bad",
+                "reference": "9504fa9ea681b586028adaaa0877db4aecf32bad",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0|~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cron\\": "src/Cron/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "CRON for PHP: Calculate the next or previous run date and determine if a CRON expression is due",
+            "keywords": [
+                "cron",
+                "schedule"
+            ],
+            "time": "2017-01-23T04:29:33+00:00"
+        },
+        {
             "name": "nav33d/craft-relations",
             "version": "1.2.1",
             "source": {
@@ -1860,6 +1904,56 @@
             "time": "2019-11-20T06:59:06+00:00"
         },
         {
+            "name": "omnilight/yii2-scheduling",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omnilight/yii2-scheduling.git",
+                "reference": "014105e4a23aaac8a1bace1a7f7179b229ee4933"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omnilight/yii2-scheduling/zipball/014105e4a23aaac8a1bace1a7f7179b229ee4933",
+                "reference": "014105e4a23aaac8a1bace1a7f7179b229ee4933",
+                "shasum": ""
+            },
+            "require": {
+                "mtdowling/cron-expression": "~1.0",
+                "php": ">=5.4.0",
+                "symfony/process": "2.6.* || 3.* || 4.*",
+                "yiisoft/yii2": "2.0.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.36"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Required to use the thenPing method on schedules (~5.0)."
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "omnilight\\scheduling\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "omnilight\\scheduling\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Pavel Agalecky",
+                    "email": "pavel.agalecky@gmail.com"
+                }
+            ],
+            "description": "Scheduling extension for Yii2 framework",
+            "keywords": [
+                "cron",
+                "scheduling",
+                "yii"
+            ],
+            "time": "2019-07-19T17:36:56+00:00"
+        },
+        {
             "name": "opis/closure",
             "version": "3.5.1",
             "source": {
@@ -1919,6 +2013,121 @@
                 "serialize"
             ],
             "time": "2019-11-29T22:36:02+00:00"
+        },
+        {
+            "name": "panlatent/cron-expression-descriptor",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/panlatent/cron-expression-descriptor.git",
+                "reference": "eedc81c26b4f6713082d0382edbd8935cc3f6549"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/panlatent/cron-expression-descriptor/zipball/eedc81c26b4f6713082d0382edbd8935cc3f6549",
+                "reference": "eedc81c26b4f6713082d0382edbd8935cc3f6549",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^6.5"
+            },
+            "suggest": {
+                "ext-intl": "Help translate cron express description"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Panlatent\\CronExpressionDescriptor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Panlatent",
+                    "email": "panlatent@gmail.com"
+                }
+            ],
+            "description": "Converts cron expressions into human readable descriptions.",
+            "time": "2019-10-10T08:33:14+00:00"
+        },
+        {
+            "name": "panlatent/schedule",
+            "version": "0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/panlatent/schedule.git",
+                "reference": "cb01dbb952b3bed08aaea3b21c45ee0871562857"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/panlatent/schedule/zipball/cb01dbb952b3bed08aaea3b21c45ee0871562857",
+                "reference": "cb01dbb952b3bed08aaea3b21c45ee0871562857",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0",
+                "guzzlehttp/guzzle": "^6.3",
+                "omnilight/yii2-scheduling": "^1.1",
+                "panlatent/cron-expression-descriptor": "^1.0.2",
+                "symfony/process": "^4.2"
+            },
+            "require-dev": {
+                "codeception/codeception": "^2.5"
+            },
+            "suggest": {
+                "ext-intl": "Help translate cron express description"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Schedule",
+                "handle": "schedule",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/panlatent/schedule/master/CHANGELOG.md",
+                "class": "panlatent\\schedule\\Plugin",
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "panlatent\\schedule\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "panlatent@gmail.com",
+                    "homepage": "https://panlatent.com/"
+                }
+            ],
+            "description": "Schedule plugin for CraftCMS 3",
+            "homepage": "https://github.com/panlatent/schedule",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "crontab",
+                "job",
+                "schedule"
+            ],
+            "time": "2019-10-10T10:02:43+00:00"
         },
         {
             "name": "paragonie/random_compat",

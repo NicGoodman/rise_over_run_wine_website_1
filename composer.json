@@ -26,6 +26,7 @@
     "craftcms/redactor": "^2.0",
     "ether/tags": "^1.0",
     "nav33d/craft-relations": "^1.2",
+    "panlatent/schedule": "^0.2.2",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {
