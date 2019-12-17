@@ -19,6 +19,7 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
+    "bolden/htmlcache": "^1.0",
     "craftcms/cms": "^3.0",
     "craftcms/contact-form": "^2.0",
     "craftcms/feed-me": "^4.0",
