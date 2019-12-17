@@ -2,7 +2,11 @@
   {% set countryName = entry.title %}
 
   {% set allProducers = craft.entries({
-  section: 'producers'
+  section: 'producers',
+  relatedTo: [
+  'and',
+  { targetElement: craft.entries().section('countries').title(countryName) }
+  ]
   }) %}
 
   {% set allWinesInCountry = craft.entries({
