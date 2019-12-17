@@ -1,13 +1,8 @@
 {% block main %}
   {% set countryName = entry.title %}
-
+{% cache %}
   {% set allProducers = craft.entries({
-  section: 'producers',
-  relatedTo: [
-  'and',
-  { targetElement: craft.entries().section('countries').title(countryName) }
-  ]
-  }) %}
+  section: 'producers' %}
 
   {% set allWinesInCountry = craft.entries({
   section: 'wines',
@@ -16,7 +11,6 @@
   { targetElement: craft.entries().section('countries').title(countryName) }
   ]
   }) %}
-
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
@@ -111,4 +105,5 @@
       {% endfor %}
     </section>
   </section>
+  {% endcache %}
 {% endblock %}
