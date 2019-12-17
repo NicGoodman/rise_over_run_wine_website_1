@@ -7,25 +7,25 @@
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
-      <h4 id="producerName" class="text-md text-center font-muli font-bold uppercase">
+      <h4 id="producerName" class="text-sm xl:text-base text-center font-muli font-bold uppercase">
       {{ producerName }}
       </h4>
     </div>
   {% else %}
     <div class="flex flex-col flex-shrink-0 justify-center w-24 h-24 xl:w-32 xl:h-32 ml-2 mr-2 bg-riseoverrunwine-blue text-gray-800 rounded-full border-2 border-gray-100">
-      <h4 id="producerName" class="text-md text-center font-muli font-bold uppercase">
+      <h4 id="producerName" class="text-sm xl:text-base text-center font-muli font-bold uppercase">
       {{ producerName }}
       </h4>
     </div>
   {% endif %}
   </div>
   <div id="producerInfo" class="w-2/3 mt-4">
-    <h4 id="producerDescription" class="text-md font-light font-zilla text-gray-200 pb-4">
+    <h4 id="producerDescription" class="text-sm lg:text-base font-light font-zilla text-gray-200 pb-4">
     <p>{{ producerDescription|nl2br }}</p>
     </h4>
     {% for entry in producerWines.all() %}
     {% set wineType = entry.wineType %}
-    <h5 id="wineName" class="text-lg font-medium font-zilla text-gray-200">
+    <h5 id="wineName" class="text-base lg:text-lg font-medium font-zilla text-gray-200">
       {% if wineType.value == 'red' %}
       <i class="fas fa-circle text-red-700"></i>
       {% endif %}
