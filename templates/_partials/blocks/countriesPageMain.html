@@ -16,11 +16,11 @@
   { targetElement: craft.entries().section('countries').title(countryName) }
   ]
   }) %}
-  <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 pb-8" style="background: linear-gradient(
+  <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;"
-    {% else %} class="w-screen min-h-screen flex flex-col pt-8 pl-16 pr-16 bg-gray-800" {% endif %}>
+    {% else %} class="w-screen min-h-screen flex flex-col pt-8 bg-gray-800" {% endif %}>
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4 justify-center">
       {% for entry in allProducers.all() %}
