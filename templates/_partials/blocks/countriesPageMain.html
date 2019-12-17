@@ -66,9 +66,11 @@
 
           {% if producerWines is empty %}
           {% else %}
-          <div id="producersWithRegionBlock" class="w-1/2">
+          <div id="producersWithRegionBlock" class="w-full">
+            <div id="producerWrapper" class="w-1/2">
             {% include "_partials/blocks/producerBlock" %}
             {{ block('producer') }}
+            </div>
             </div>
           {% endif %}
         {% endfor %}
