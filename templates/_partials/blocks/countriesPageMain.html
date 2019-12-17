@@ -46,7 +46,7 @@
       {% endfor %}
     </section>
 
-    <section id="regions" class="w-full flex-wrap">
+    <section id="regions" class="w-full flex flex-wrap">
       {% set regions = craft.tags().group('regions').relatedTo(allWinesInCountry) %}
       {% for tag in regions.all() %}
         {% set regionName = tag %}
@@ -87,7 +87,7 @@
         {% set subRegions = craft.tags().group('subRegions').relatedTo(winesBySubRegions) %}
         {% for tag in subRegions.all() %}
         {% set subRegionName = tag %}
-        <section id="subRegion" class="flex flex-col w-1/2 p-4">
+        <section id="subRegion" class="flex flex-wrap w-full p-4">
           <h3 id="subRegionName" class="w-full self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500">{{ subRegionName.title }}</h3>
           {% for entry in allProducers.all() %}
             {% set producerName = entry.title %}
@@ -105,8 +105,10 @@
 
             {% if producerWines is empty %}
             {% else %}
+            <div id="producersWithSubRegionBlock" class="w-1/2">
               {% include "_partials/blocks/producerBlock" %}
               {{ block('producer') }}
+              </div>
             {% endif %}
           {% endfor %}
         </section>
