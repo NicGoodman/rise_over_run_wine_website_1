@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "693be11ff97401edf24cbcf1bc11b2d2",
+    "content-hash": "c47330039a6fb9758fd78896522e30e2",
     "packages": [
         {
             "name": "bolden/htmlcache",
@@ -474,6 +474,65 @@
                 "validator"
             ],
             "time": "2019-07-29T10:31:59+00:00"
+        },
+        {
+            "name": "cpliakas/git-wrapper",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cpliakas/git-wrapper.git",
+                "reference": "0b4cd8bba1cc6326dfb00f41c4abb97cc89bf2d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cpliakas/git-wrapper/zipball/0b4cd8bba1cc6326dfb00f41c4abb97cc89bf2d4",
+                "reference": "0b4cd8bba1cc6326dfb00f41c4abb97cc89bf2d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/event-dispatcher": "^4.1",
+                "symfony/process": "^4.1"
+            },
+            "require-dev": {
+                "nette/utils": "^2.5",
+                "phpstan/phpstan": "^0.11",
+                "phpunit/phpunit": "^7.4",
+                "psr/log": "1.0",
+                "symfony/filesystem": "^4.1",
+                "symplify/changelog-linker": "^5.4",
+                "symplify/easy-coding-standard": "^5.4"
+            },
+            "suggest": {
+                "monolog/monolog": "Enables logging of executed git commands"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GitWrapper\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomáš Votruba",
+                    "email": "tomas.vot@gmail.com"
+                },
+                {
+                    "name": "Chris Pliakas",
+                    "email": "opensource@chrispliakas.com"
+                }
+            ],
+            "description": "A PHP wrapper around the Git command line utility.",
+            "keywords": [
+                "cli",
+                "git",
+                "git wrapper"
+            ],
+            "time": "2019-04-28T22:31:09+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -2529,6 +2588,108 @@
             "time": "2019-11-01T11:05:21+00:00"
         },
         {
+            "name": "putyourlightson/craft-blitz",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-blitz.git",
+                "reference": "e1c65c185ceb73d38bb51e470c8e3c88b4af8ac0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/e1c65c185ceb73d38bb51e470c8e3c88b4af8ac0",
+                "reference": "e1c65c185ceb73d38bb51e470c8e3c88b4af8ac0",
+                "shasum": ""
+            },
+            "require": {
+                "cpliakas/git-wrapper": "^1.7.0 || ^2.2.0",
+                "craftcms/cms": "^3.2.1",
+                "ext-json": "*",
+                "putyourlightson/craft-log-to-file": "^1.1.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Blitz",
+                "handle": "blitz",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://putyourlightson.com/",
+                "documentationUrl": "https://putyourlightson.com/plugins/blitz",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-blitz/v2/CHANGELOG.md",
+                "class": "putyourlightson\\blitz\\Blitz",
+                "schemaVersion": "3.0.0",
+                "hasCpSettings": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\blitz\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "Intelligent static page caching for creating lightning-fast sites.",
+            "homepage": "https://putyourlightson.com/plugins/blitz",
+            "keywords": [
+                "Craft",
+                "cache",
+                "caching",
+                "cms",
+                "craftcms",
+                "performance",
+                "plugin",
+                "speed"
+            ],
+            "time": "2019-12-10T22:38:55+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-log-to-file",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-log-to-file.git",
+                "reference": "b8fd33850edb4214de7e2649892f476c1336d16b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-log-to-file/zipball/b8fd33850edb4214de7e2649892f476c1336d16b",
+                "reference": "b8fd33850edb4214de7e2649892f476c1336d16b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "yiisoft/yii2": "^2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "name": "Log To File",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://putyourlightson.com/",
+                "documentationUrl": "https://github.com/putyourlightson/craft-log-to-file",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-log-to-file/v1/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\logtofile\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Logs messages to a specific log file for Craft CMS.",
+            "homepage": "https://github.com/putyourlightson/craft-log-to-file",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craftcms",
+                "file",
+                "log",
+                "plugin"
+            ],
+            "time": "2019-10-09T17:12:58+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -2886,6 +3047,134 @@
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
             "time": "2019-12-01T10:06:17+00:00"
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "version": "v4.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
+                "reference": "b3c3068a72623287550fe20b84a2b01dcba2686f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b3c3068a72623287550fe20b84a2b01dcba2686f",
+                "reference": "b3c3068a72623287550fe20b84a2b01dcba2686f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/event-dispatcher-contracts": "^1.1"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.4"
+            },
+            "provide": {
+                "psr/event-dispatcher-implementation": "1.0",
+                "symfony/event-dispatcher-implementation": "1.1"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/expression-language": "^3.4|^4.0|^5.0",
+                "symfony/http-foundation": "^3.4|^4.0|^5.0",
+                "symfony/service-contracts": "^1.1|^2",
+                "symfony/stopwatch": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "",
+                "symfony/http-kernel": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-11-28T13:33:56+00:00"
+        },
+        {
+            "name": "symfony/event-dispatcher-contracts",
+            "version": "v1.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher-contracts.git",
+                "reference": "c43ab685673fb6c8d84220c77897b1d6cdbe1d18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/c43ab685673fb6c8d84220c77897b1d6cdbe1d18",
+                "reference": "c43ab685673fb6c8d84220c77897b1d6cdbe1d18",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "suggest": {
+                "psr/event-dispatcher": "",
+                "symfony/event-dispatcher-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\EventDispatcher\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to dispatching event",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "time": "2019-09-17T09:54:03+00:00"
         },
         {
             "name": "symfony/filesystem",
