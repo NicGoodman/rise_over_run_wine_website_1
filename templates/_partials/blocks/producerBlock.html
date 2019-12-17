@@ -24,7 +24,7 @@
     {{ producerDescription }}
     </h4>
     {% for entry in producerWines.all() %}
-    {% set wineType = entry.wineType[0] %}
+    {% set wineType = entry.wineType %}
     <h5 id="wineName" class="text-lg font-medium font-zilla text-gray-200">
       {% if wineType.value == 'red' %}
       <i class="fas fa-circle text-red-700"></i>
@@ -38,9 +38,9 @@
       {% if wineType.value == 'orange' %}
       <i class="fas fa-circle text-orange-300"></i>
       {% endif %}
-      {% set wineName = entry.wineName[0] ~ ' • '%}
-      {% set grapeName = entry.grape[0] ~ ' • '%}
-      {{ wineName }}{{ grapeName }}{{ entry.vintage[0] }}
+      {% set wineName = entry.wineName ~ ' • '%}
+      {% set grapeName = entry.grape ~ ' • '%}
+      {{ wineName }}{{ grapeName }}{{ entry.vintage }}
     </h5>
     {% endfor %}
   </div>
