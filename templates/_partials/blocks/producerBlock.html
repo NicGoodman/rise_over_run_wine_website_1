@@ -24,7 +24,7 @@
     {{ producerDescription }}
     </h4>
     {% for entry in producerWines.all() %}
-    {% set wineType = entry.wineType %}
+    {% set wineType = entry.wineType[0] ?? null %}
     <h5 id="wineName" class="text-lg font-medium font-zilla text-gray-200">
       {% if wineType.value == 'red' %}
       <i class="fas fa-circle text-red-700"></i>
