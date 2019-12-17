@@ -38,9 +38,9 @@
       {% if wineType.value == 'orange' %}
       <i class="fas fa-circle text-orange-300"></i>
       {% endif %}
-      {% set wineName = entry.wineName[0] ?? null ~ ' • '%}
-      {% set grapeName = entry.grape[0] ?? null ~ ' • '%}
-      {{ wineName }}{{ grapeName }}{{ entry.vintage[0] ?? null }}
+      {% set wineName = entry.wineName ~ ' • '%}
+      {% set grapeName = entry.grape ~ ' • '%}
+      {{ wineName }}{{ grapeName }}{{ entry.vintage }}
     </h5>
     {% endfor %}
   </div>

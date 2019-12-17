@@ -3,7 +3,7 @@
 
   {% set allProducers = craft.entries({
   section: 'producers',
-  with: ['title', 'producerImage', 'producerDescription']
+  with: ['producerImage']
   }) %}
 
   {% set allWinesInCountry = craft.entries({
@@ -24,12 +24,11 @@
     <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4">
       {% for entry in allProducers.all() %}
         {% set producerName = entry.title %}
-        {% set producerDescription = entry.producerDescription[0] ?? null %}
+        {% set producerDescription = entry.producerDescription %}
         {% set producerWines = craft.entries({
         section: 'wines',
         subRegionTag: ':empty:',
         regionsTag: ':empty:',
-        with: ['wineName', 'grape', 'vintage'],
         relatedTo: [
         'and',
         { targetElement: craft.entries().section('producers').title(producerName) },
@@ -51,11 +50,10 @@
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
         {% for entry in allProducers.all() %}
           {% set producerName = entry.title %}
-          {% set producerDescription = entry.producerDescription[0] ?? null %}
+          {% set producerDescription = entry.producerDescription %}
           {% set producerWines = craft.entries({
           section: 'wines',
           subRegionTag: ':empty:',
-          with: ['wineName', 'grape', 'vintage'],
           relatedTo: [
           'and',
           { targetElement: regionName },
@@ -88,11 +86,10 @@
           <h3 id="subRegionName" class="w-full self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500">{{ subRegionName.title }}</h3>
           {% for entry in allProducers.all() %}
             {% set producerName = entry.title %}
-            {% set producerDescription = entry.producerDescription[0] ?? null %}
+            {% set producerDescription = entry.producerDescription %}
             {% set producerWines = craft.entries({
             section: 'wines',
             subRegionTag: ':notempty:',
-            with: ['wineName', 'grape', 'vintage'],
             relatedTo: [
             'and',
             { targetElement: regionName },
