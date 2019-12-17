@@ -55,7 +55,7 @@
           {% set producerWines = craft.entries({
           section: 'wines',
           subRegionTag: ':empty:',
-          with: ['wineType', 'wineName', 'grape', 'vintage'],
+          with: ['wineName', 'grape', 'vintage'],
           relatedTo: [
           'and',
           { targetElement: regionName },
@@ -92,7 +92,7 @@
             {% set producerWines = craft.entries({
             section: 'wines',
             subRegionTag: ':notempty:',
-            with: ['wineType', 'wineName', 'grape', 'vintage'],
+            with: ['wineName', 'grape', 'vintage'],
             relatedTo: [
             'and',
             { targetElement: regionName },
