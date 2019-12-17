@@ -88,7 +88,7 @@
           <h3 id="subRegionName" class="w-full self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500">{{ subRegionName.title }}</h3>
           {% for entry in allProducers.all() %}
             {% set producerName = entry.title %}
-            {% set producerDescription = entry.producerDescription[0] %}
+            {% set producerDescription = entry.producerDescription[0] ?? null %}
             {% set producerWines = craft.entries({
             section: 'wines',
             subRegionTag: ':notempty:',
