@@ -11,12 +11,13 @@
   ]
   }) %}
 
-{% set country = craft.entries().section('countries').title(countryName) %}
+
 
 {% for entry in producerEntries %}
   {% set producerWines = allWinesInCountry.relatedTo(entry) %}
   {% set regions = craft.tags().group('regions').relatedTo(producerWines) %}
   {% set subRegions = craft.tags().group('subRegions').relatedTo(producerWines) %}
+  {% set country = entry.country %}
   {% do entry.setFieldValue('regionsTag', regions) %}
   {% do entry.setFieldValue('subRegionTag', subRegions) %}
   {% do entry.setFieldValue('country', country) %}
