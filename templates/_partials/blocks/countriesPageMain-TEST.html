@@ -11,7 +11,7 @@
   ]
   }) %}
 
-{% set country = entry %}
+{% set country = craft.entries().section('countries').title(countryName) %}
 
 {% for entry in producerEntries %}
   {% set producerWines = allWinesInCountry.relatedTo(entry) %}
