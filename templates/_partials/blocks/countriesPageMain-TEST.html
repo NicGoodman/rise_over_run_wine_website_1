@@ -9,13 +9,7 @@
   ]
   }) %}
 
-  {% set producerEntries = craft.entries({
-  section: 'producers',
-  relatedTo: [
-  'and',
-  { targetElement: allWinesInCountry }
-  ]
-  }) %}
+  {% set producerEntries = craft.entries().section('producers').relatedTo(allWinesInCountry).all() %}
 
 
 
