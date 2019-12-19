@@ -11,18 +11,14 @@
   ]
   }).all() %}
 
+{% set regions = craft.tags().group('regions').relatedTo(allWinesInCountry) %}
 
-{% for entry in allWinesInCountry %}
-  {% set region = entry.regionsTag %}
-  {% set subRegion = entry.subRegionTag %}
-  {% set country = entry.country %}
     {% for entry in producerEntries %}
-    {% do entry.setFieldValue('regionsTag', region) %}
-    {% do entry.setFieldValue('subRegionTag', subRegion) %}
-    {% do entry.setFieldValue('country', country) %}
+    {% do entry.setFieldValue('regionsTag', regions) %}
+
     {% do craft.app.getElements().saveElement(entry) %}
   {% endfor %}
-{% endfor %}
+
 
 
 
