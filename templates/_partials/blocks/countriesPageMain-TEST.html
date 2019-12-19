@@ -12,8 +12,9 @@
   }).all() %}
 
 {% for entry in producerEntries %}
+  {% set producerWines = allWinesInCountry.relatedTo(entry).all() %}
   {% set regions = [] %}
-  {% for entry in allWinesInCountry.relatedTo(entry.title) %}
+  {% for entry in producerWines %}
   {% set regionName = entry.regionsTag %}
     {% set regions = regions|merge([regionName.title]) %}
   {% endfor %}
