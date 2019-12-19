@@ -12,12 +12,8 @@
   }) %}
 
 {% for entry in producerEntries %}
-  {% set producerWines = allWinesInCountry.relatedTo(entry).all() %}
-  {% set regions = [] %}
-  {% for entry in producerWines %}
-  {% set regionName = entry.regionsTag %}
-    {% set regions = regions|merge([regionName.title]) %}
-  {% endfor %}
+  {% set producerWines = allWinesInCountry.relatedTo(entry) %}
+  {% set regions = craft.tags().group('regions').relatedTo(producerWines).all() %}
   {% do entry.setFieldValue('regionsTag', regions) %}
   {% do craft.app.getElements().saveElement(entry) %}
 {% endfor %}
