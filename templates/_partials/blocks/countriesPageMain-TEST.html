@@ -9,7 +9,7 @@
   'and',
   { targetElement: craft.entries().section('countries').title(countryName) }
   ]
-  }).all() %}
+  }) %}
 
 {% for entry in producerEntries %}
   {% set producerWines = allWinesInCountry.relatedTo(entry).all() %}
