@@ -13,22 +13,20 @@
 
 {% set regions = [] %}
 {% set subRegions = [] %}
-{% set country = entry %}
 {% for entry in allWinesInCountry %}
-{% set regiontag = entry.regionsTag %}
-{% set subRegiontag = entry.subRegionTag %}
+
   {% if regiontag not in regions %}
-    {% set regions = regions|merge([regiontag]) %}
+    {% set regions = regions|merge([entry.regionsTag]) %}
   {% endif %}
   {% if subRegiontag not in subRegions %}
-    {% set subRegions = subRegions|merge([subRegiontag]) %}
+    {% set subRegions = subRegions|merge([entry.subRegionTag]) %}
   {% endif %}
 {% endfor %}
 
 {% for entry in producerEntries %}
     {% do entry.setFieldValue('regionsTag', regions) %}
     {% do entry.setFieldValue('subRegionTag', subRegions) %}
-    {% do entry.setFieldValue('country', country) %}
+
     {% do craft.app.getElements().saveElement(entry) %}
 {% endfor %}
 
