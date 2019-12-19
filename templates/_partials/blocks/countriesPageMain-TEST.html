@@ -13,8 +13,8 @@
 
   {% for entry in allWinesInCountry.all() %}
   {% set wine = entry.title %}
-  {% set region = test %}
-  {% set subRegion = test %}
+  {% set region = entry.title %}
+  {% set subRegion = entry.title %}
     {% for entry in allProducers.relatedTo(wine).all() %}
     {% do entry.setFieldValue('regionsTag', 'region') %}
     {% do entry.setFieldValue('subRegionTag', 'subRegion') %}
