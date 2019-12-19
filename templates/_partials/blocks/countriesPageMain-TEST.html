@@ -13,11 +13,11 @@
 
   {% for entry in allWinesInCountry %}
   {% set wine = entry.title %}
-  {% set region = entry.regionsTag.value %}
-  {% set subRegion = entry.subRegionTag.value %}
+  {% set region = entry.regionsTag %}
+  {% set subRegion = entry.subRegionTag %}
     {% for entry in allProducers.relatedTo(wine) %}
-    {% do entry.setFieldValue('regionsTag', 'region') %}
-    {% do entry.setFieldValue('subRegionTag', 'subRegion') %}
+    {% do entry.setFieldValue('regionsTag', 'region.value') %}
+    {% do entry.setFieldValue('subRegionTag', 'subRegion.value') %}
     {% do entry.setFieldValue('country', 'countryName') %}
     {% do craft.app.getElements().saveElement(entry) %}
     {% endfor %}
