@@ -15,10 +15,10 @@
 {% set subRegions = [] %}
 {% for entry in allWinesInCountry %}
 
-  {% if regiontag not in regions %}
+  {% if entry.regionsTag not in regions %}
     {% set regions = regions|merge([entry.regionsTag]) %}
   {% endif %}
-  {% if subRegiontag not in subRegions %}
+  {% if entry.subRegionTag not in subRegions %}
     {% set subRegions = subRegions|merge([entry.subRegionTag]) %}
   {% endif %}
 {% endfor %}
