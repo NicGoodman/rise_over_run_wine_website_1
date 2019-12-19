@@ -13,7 +13,7 @@
 
 {% for entry in producerEntries %}
   {% set producerWines = allWinesInCountry.relatedTo(entry) %}
-  {% set regions = craft.tags().group('regions').relatedTo(producerWines).all() %}
+  {% set regions = craft.tags().group('regions').relatedTo(producerWines) %}
   {% do entry.setFieldValue('regionsTag', regions) %}
   {% do craft.app.getElements().saveElement(entry) %}
 {% endfor %}
