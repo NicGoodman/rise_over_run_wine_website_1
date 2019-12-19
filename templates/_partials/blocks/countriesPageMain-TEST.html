@@ -15,12 +15,14 @@
 {% set subRegions = [] %}
 {% set country = entry %}
 {% for entry in allWinesInCountry %}
-
-    {% set regions = regions|merge([entry.regionsTag]) %}
-
-
-    {% set subRegions = subRegions|merge([entry.subRegionTag]) %}
-
+{% set regiontag = entry.regionsTag %}
+{% set subRegiontag = entry.subRegionTag %}
+  {% if regiontag not in regions %}
+    {% set regions = regions|merge([regiontag]) %}
+  {% endif %}
+  {% if subRegiontag not in subRegions %}
+    {% set subRegions = subRegions|merge([subRegiontag]) %}
+  {% endif %}
 {% endfor %}
 
 {% for entry in producerEntries %}
