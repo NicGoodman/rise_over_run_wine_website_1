@@ -11,24 +11,20 @@
   ]
   }).all() %}
 
-{% set regions = [] %}
-{% set subRegions = [] %}
-{% for entry in allWinesInCountry %}
-
-  {% if entry.regionsTag not in regions %}
-    {% set regions = regions|merge([entry.regionsTag]) %}
-  {% endif %}
-  {% if entry.subRegionTag not in subRegions %}
-    {% set subRegions = subRegions|merge([entry.subRegionTag]) %}
-  {% endif %}
-{% endfor %}
-
 {% for entry in producerEntries %}
-    {% do entry.setFieldValue('regionsTag', regions) %}
-    {% do entry.setFieldValue('subRegionTag', subRegions) %}
-
-    {% do craft.app.getElements().saveElement(entry) %}
+  {% set regions = {} %}
+  {% for entry in allWinesInCountry.relatedTo(entry) %}
+    {% set regions = regions|merge({entry.regionsTag}) %}
+  {% endfor %}
+  {% do entry.setFieldValue('regionsTag', regions) %}
+  {% do craft.app.getElements().saveElement(entry) %}
 {% endfor %}
+
+
+
+
+
+
 
 
 
