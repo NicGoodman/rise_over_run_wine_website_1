@@ -19,14 +19,10 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
-    "bolden/htmlcache": "^1.0",
     "craftcms/cms": "^3.0",
     "craftcms/contact-form": "^2.0",
     "craftcms/feed-me": "^4.0",
     "craftcms/redactor": "^2.0",
-    "ether/tags": "^1.0",
-    "nav33d/craft-relations": "^1.2",
-    "panlatent/schedule": "^0.2.2",
     "putyourlightson/craft-blitz": "^3.0",
     "vlucas/phpdotenv": "^2.4.0"
   },
