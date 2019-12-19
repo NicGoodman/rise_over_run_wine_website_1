@@ -12,9 +12,10 @@
   }).all() %}
 
 {% for entry in producerEntries %}
-  {% set regions = {} %}
+  {% set regions = [] %}
   {% for entry in allWinesInCountry.relatedTo(entry) %}
-    {% set regions = regions|merge({entry.regionsTag}) %}
+  {% set regionName = entry.regionsTag %}
+    {% set regions = regions|merge([regionName.title]) %}
   {% endfor %}
   {% do entry.setFieldValue('regionsTag', regions) %}
   {% do craft.app.getElements().saveElement(entry) %}
