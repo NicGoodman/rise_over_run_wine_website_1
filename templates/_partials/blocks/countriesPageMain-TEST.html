@@ -1,7 +1,7 @@
 {% block main %}
   {% set countryName = entry.title %}
 
-  {% set allProducers = craft.entries().section('producers') %}
+  {% set producerEntries = craft.entries().section('producers').all() %}
 
   {% set allWinesInCountry = craft.entries({
   section: 'wines',
@@ -12,15 +12,17 @@
   }) %}
 
 
-
-  {% set region = 'region' %}
-  {% set subRegion = 'sub region' %}
-    {% for entry in allProducers.all() %}
+{% for entry in allWinesInCountry.all() %}
+  {% set region = entry.regionsTag %}
+  {% set subRegion = entry.subRegionTag %}
+  {% set country = entry.country %}
+    {% for entry in producerEntries %}
     {% do entry.setFieldValue('regionsTag', 'region') %}
     {% do entry.setFieldValue('subRegionTag', 'subRegion') %}
-    {% do entry.setFieldValue('country', 'countryName') %}
+    {% do entry.setFieldValue('country', 'country') %}
     {% do craft.app.getElements().saveElement(entry) %}
-    {% endfor %}
+  {% endfor %}
+{% endfor %}
 
 
 
