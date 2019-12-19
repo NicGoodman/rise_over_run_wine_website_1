@@ -1,8 +1,6 @@
 {% block main %}
   {% set countryName = entry.title %}
 
-  {% set producerEntries = craft.entries().section('producers').all() %}
-
   {% set allWinesInCountry = craft.entries({
   section: 'wines',
   relatedTo: [
@@ -11,13 +9,22 @@
   ]
   }) %}
 
+  {% set producerEntries = craft.entries({
+  section: 'producers',
+  relatedTo: [
+  'and',
+  { targetElement: allWinesInCountry }
+  ]
+  }) %}
+
+
 
 
 {% for entry in producerEntries %}
   {% set producerWines = allWinesInCountry.relatedTo(entry) %}
   {% set regions = craft.tags().group('regions').relatedTo(producerWines) %}
   {% set subRegions = craft.tags().group('subRegions').relatedTo(producerWines) %}
-  {% set country = entry.country %}
+  {% set country = craft.entries().section('countries').relatedTo(producerWines) %}
   {% do entry.setFieldValue('regionsTag', regions) %}
   {% do entry.setFieldValue('subRegionTag', subRegions) %}
   {% do entry.setFieldValue('country', country) %}
