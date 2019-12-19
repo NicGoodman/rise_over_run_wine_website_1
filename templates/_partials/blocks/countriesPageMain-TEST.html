@@ -20,6 +20,7 @@
     {% do entry.setFieldValue('subRegionTag', 'subRegion') %}
     {% do entry.setFieldValue('country', 'countryName') %}
     {% do craft.app.getElements().saveElement(entry) %}
+    {% endfor %}
   {% endfor %}
 
 
@@ -30,7 +31,7 @@
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;"
     {% else %} class="w-screen min-h-screen flex flex-col pt-8 bg-gray-800" {% endif %}>
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
-    
+
   </section>
 
 {% endblock %}
