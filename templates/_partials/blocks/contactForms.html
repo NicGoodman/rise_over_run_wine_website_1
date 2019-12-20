@@ -32,6 +32,6 @@
   <textarea rows="10"  id="message" class="appearance-none w-full bg-riseoverrunwine-blue border-2 border-gray-800" name="message">{{ message.message ?? '' }}</textarea>
   {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
-  <button class="self-center mt-8 w-1/4 py-2 px-8 bg-gray-800 text-riseoverrunwine-blue uppercase font-black font-muli rounded border-2 border-gray-800 hover:text-gray-800 hover:bg-riseoverrunwine-blue"type="submit" value="Send">Send</button>
+  <button class="self-center mt-8 w-24 py-2 px-8 bg-gray-800 text-riseoverrunwine-blue uppercase font-black font-muli rounded border-2 border-gray-800 hover:text-gray-800 hover:bg-riseoverrunwine-blue"type="submit" value="Send">Send</button>
 </form>
 {% endblock %}
