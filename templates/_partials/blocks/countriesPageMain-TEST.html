@@ -23,6 +23,10 @@
 {% for entry in producerEntriesRelatedToCountry %}
 {{ entry.title }}
 {% endfor %}
+
+{% for entry in allWinesInCountry %}
+{{ entry.title }}
+{% endfor %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
