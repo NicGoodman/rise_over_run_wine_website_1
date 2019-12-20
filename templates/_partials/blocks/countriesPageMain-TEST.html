@@ -80,12 +80,10 @@ relatedTo: [
 
           {% if producerWines is empty %}
           {% else %}
-          <div id="producersWithRegionBlock" class="w-full flex flex-wrap justify-end">
-            <div id="producerWrapper" class="w-full md:w-1/2">
+
             {% include "_partials/blocks/producerBlock" %}
             {{ block('producer') }}
-            </div>
-            </div>
+        
           {% endif %}
         {% endfor %}
 
