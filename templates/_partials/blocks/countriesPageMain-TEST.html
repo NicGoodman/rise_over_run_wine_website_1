@@ -11,7 +11,7 @@
 
 
   {% for entry in producerEntriesRelatedToCountry %}
-  {% if not entry.regionTag|length && entry.subRegionTag|length %}
+  {% if not entry.regionTag|length and entry.subRegionTag|length %}
     {% set producerWines = allWinesInCountry.relatedTo(entry) %}
     {% set regions = craft.tags().group('regions').relatedTo(producerWines) %}
     {% set subRegions = craft.tags().group('subRegions').relatedTo(producerWines) %}
