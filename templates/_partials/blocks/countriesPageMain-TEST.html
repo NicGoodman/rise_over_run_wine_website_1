@@ -24,7 +24,14 @@
 {{ entry.title }}
 {% endfor %}
 
-{% set allWinesInCountryEntries = craft.entries().section('wines').relatedTo(countryName).all() %}
+{% set allWinesInCountryEntries = craft.entries({
+section: 'wines',
+relatedTo: [
+'and',
+{ targetElement: craft.entries().section('countries').title(countryName) }
+]
+}).all() %}
+
 {% for entry in allWinesInCountryEntries %}
 {{ entry.title }}
 {% endfor %}
