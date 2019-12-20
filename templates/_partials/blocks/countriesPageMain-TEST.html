@@ -86,8 +86,9 @@ relatedTo: [
             {{ block('producer') }}
 </div>
           {% endif %}
-          </div>
+
         {% endfor %}
+        </div>
 <div id="producers-with-subregion" class="flex flex-wrap justify-end w-full">
         {% set winesBySubRegions = craft.entries({
         section: 'wines',
