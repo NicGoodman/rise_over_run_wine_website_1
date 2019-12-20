@@ -24,7 +24,7 @@
 {{ entry.title }}
 {% endfor %}
 
-{% set allWinesInCountryEntries = craft.entries().section('wines').country("*#{countryName}*").all() %}
+{% set allWinesInCountryEntries = craft.entries().section('wines').relatedTo(countryName).all() %}
 {% for entry in allWinesInCountryEntries %}
 {{ entry.title }}
 {% endfor %}
