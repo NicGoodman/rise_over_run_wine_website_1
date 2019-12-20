@@ -11,7 +11,7 @@
 
 {% from _self import errorList %}
 
-<form method="post" action="" accept-charset="UTF-8" class="w-full flex flex-col">
+<form method="post" action="" accept-charset="UTF-8" class="w-full flex flex-col mb-3">
   {{ csrfInput() }}
   <input type="hidden" name="action" value="contact-form/send">
   {{ redirectInput('contact/thanks') }}
@@ -32,6 +32,6 @@
   <textarea rows="10"  id="message" class="appearance-none w-full bg-riseoverrunwine-blue border-2 border-gray-800" name="message">{{ message.message ?? '' }}</textarea>
   {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
-  <button class="self-center mt-8 w-24 py-2 px-8 bg-gray-800 text-riseoverrunwine-blue uppercase font-black font-muli rounded border-2 border-gray-800 hover:text-gray-800 hover:bg-riseoverrunwine-blue"type="submit" value="Send">Send</button>
+  <button class="self-center mt-8 w-32 py-2 px-8 bg-gray-800 text-riseoverrunwine-blue uppercase font-black font-muli rounded border-2 border-gray-800 hover:text-gray-800 hover:bg-riseoverrunwine-blue"type="submit" value="Send">Send</button>
 </form>
 {% endblock %}
