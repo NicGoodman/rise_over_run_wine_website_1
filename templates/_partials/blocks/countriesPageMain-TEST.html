@@ -32,9 +32,6 @@ relatedTo: [
 ]
 }).all() %}
 
-{% for entry in allWinesInCountryEntries %}
-{{ entry.title }}
-{% endfor %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
@@ -65,7 +62,7 @@ relatedTo: [
       {% endfor %}
     </section>
     <section id="regions" class="w-full flex flex-wrap">
-      {% set regions = craft.tags().group('regions').relatedTo(allWinesInCountry) %}
+      {% set regions = craft.tags().group('regions').relatedTo(allWinesInCountryEntries) %}
       {% for tag in regions.all() %}
         {% set regionName = tag %}
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
