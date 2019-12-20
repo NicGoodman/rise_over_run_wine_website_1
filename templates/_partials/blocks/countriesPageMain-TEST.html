@@ -19,11 +19,6 @@
   {% endfor %}
 
 
-
-{% for entry in producerEntriesRelatedToCountry %}
-{{ entry.title }}
-{% endfor %}
-
 {% set allWinesInCountryEntries = craft.entries({
 section: 'wines',
 relatedTo: [
