@@ -99,7 +99,7 @@ relatedTo: [
         { targetElement: regionName },
         { targetElement: craft.entries().section('countries').title(countryName) }
         ]
-        }) %}
+        }).all() %}
 
 
         {% set subRegions = craft.tags().group('subRegions').relatedTo(winesBySubRegions) %}
