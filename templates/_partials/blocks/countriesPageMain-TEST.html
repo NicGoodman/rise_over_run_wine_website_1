@@ -63,7 +63,7 @@ relatedTo: [
       {% for tag in regions.all() %}
         {% set regionName = tag %}
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
-        <div id="region-content" class="flex flex-col">
+        <div id="region-content" class="flex flex-col w-full">
         {% set producerEntriesRelatedToRegion = craft.entries().section('producers').relatedTo(regionName).all() %}
         <div id="producers-with-no-subregion" class="flex flex-wrap justify-end w-full">
         {% for entry in producerEntriesRelatedToRegion %}
