@@ -23,6 +23,7 @@
     "craftcms/contact-form": "^2.0",
     "craftcms/feed-me": "^4.0",
     "craftcms/redactor": "^2.0",
+    "jalendport/craft-queuemanager": "^1.2",
     "putyourlightson/craft-blitz": "^3.0",
     "vlucas/phpdotenv": "^2.4.0"
   },

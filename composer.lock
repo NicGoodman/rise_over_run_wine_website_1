@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76e4d98316f541ec607da8491da8a53c",
+    "content-hash": "2d96ae8fb2ff2120da2d4c214c44c0f6",
     "packages": [
         {
             "name": "cakephp/core",
@@ -1369,6 +1369,61 @@
             ],
             "description": "Provides functionality for http_build_url() to environments without pecl_http.",
             "time": "2017-05-01T15:36:40+00:00"
+        },
+        {
+            "name": "jalendport/craft-queuemanager",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jalendport/craft-queuemanager.git",
+                "reference": "453493c1ca6a9caad8e2cc45dc1fe775dc8ed245"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jalendport/craft-queuemanager/zipball/453493c1ca6a9caad8e2cc45dc1fe775dc8ed245",
+                "reference": "453493c1ca6a9caad8e2cc45dc1fe775dc8ed245",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Queue Manager",
+                "handle": "queue-manager",
+                "hasCpSettings": false,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/jalendport/craft-queuemanager/master/CHANGELOG.md",
+                "class": "jalendport\\queuemanager\\QueueManager"
+            },
+            "autoload": {
+                "psr-4": {
+                    "jalendport\\queuemanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jalen Davenport",
+                    "homepage": "https://jalendport.com"
+                },
+                {
+                    "name": "Luke Youell",
+                    "homepage": "https://github.com/lukeyouell"
+                }
+            ],
+            "description": "Job Queue Manager for Craft CMS.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "queue manager"
+            ],
+            "time": "2019-11-16T18:48:11+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
