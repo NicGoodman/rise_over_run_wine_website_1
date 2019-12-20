@@ -1,6 +1,10 @@
 {% block ourWines %}
 
-{% set allProducerEntries = craft.entries().section('producers').all() %}
+{% set allProducerEntries = craft.entries({
+section: 'producers',
+country: ':empty:'
+}).all() %}
+
 {% set allWines = craft.entries().section('wines') %}
 {% for entry in allProducerEntries %}
   {% set producerWines = allWines.relatedTo(entry) %}
