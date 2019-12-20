@@ -80,10 +80,10 @@ relatedTo: [
 
           {% if producerWines is empty %}
           {% else %}
-
+<div id="producerWithNoSubRegion" class="flex flex-wrap self-start w-full lg:w-1/2 p-4">
             {% include "_partials/blocks/producerBlock" %}
             {{ block('producer') }}
-        
+        </div>
           {% endif %}
         {% endfor %}
 
