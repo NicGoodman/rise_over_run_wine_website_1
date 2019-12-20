@@ -24,7 +24,7 @@
 {{ entry.title }}
 {% endfor %}
 
-{% for entry in allWinesInCountry %}
+{% for entry in allWinesInCountry.all() %}
 {{ entry.title }}
 {% endfor %}
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pb-8" style="background: linear-gradient(
