@@ -1,5 +1,5 @@
 {% block producer %}
-<section id="producer" class="flex flex-row w-full p-4">
+<section id="producer" class="flex flex-col md:flex-row w-full p-4">
   <div id="producerImage" class="flex flex-col items-center ">
   {% if entry.producerImage|length %}
   {% set backgroundImage = entry.producerImage.one() %}
