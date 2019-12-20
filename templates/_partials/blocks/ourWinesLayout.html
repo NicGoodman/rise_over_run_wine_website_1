@@ -1,4 +1,5 @@
 {% block ourWines %}
+{% cache %}
 {% set allProducerEntries = craft.entries().section('producers').all() %}
 {% set allWines = craft.entries().section('wines') %}
 {% for entry in allProducerEntries %}
@@ -7,6 +8,7 @@
   {% do entry.setFieldValue('country', country) %}
   {% do craft.app.getElements().saveElement(entry) %}
 {% endfor %}
+{% endcache %}
 <div id="ourWinesContainer" class="flex flex-col p-4 md:p-8 lg:p-16 bg-white">
   <h2 class="w-full md:w-1/2 text-right text-4xl font-muli font-bold uppercase text-gray-800 rounded-b-none border-b-2 border-riseoverrunwine-blue self-end">
     <a id="our-wines">{{ entry.ourWinesSectionHeading }}</a>
