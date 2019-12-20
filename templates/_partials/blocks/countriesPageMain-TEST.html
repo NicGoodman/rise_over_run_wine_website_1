@@ -7,7 +7,7 @@
   { targetElement: craft.entries().section('countries').title(countryName) }
   ]
   }) %}
-  {% set producerEntriesRelatedToCountry = craft.entries().section('producers').relatedTo(allWinesInCountry).all() %}
+  {% set producerEntriesRelatedToCountry = craft.entries().section('producers').subRegionTag(':empty:').regionTag(':empty:').relatedTo(allWinesInCountry).all() %}
 
   {% for entry in producerEntriesRelatedToCountry %}
     {% set producerWines = allWinesInCountry.relatedTo(entry) %}
