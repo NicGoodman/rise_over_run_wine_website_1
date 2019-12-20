@@ -1,8 +1,5 @@
 {% block main %}
   {% set countryName = entry.title %}
-
-
-
   {% set allWinesInCountry = craft.entries({
   section: 'wines',
   relatedTo: [
@@ -10,29 +7,19 @@
   { targetElement: craft.entries().section('countries').title(countryName) }
   ]
   }) %}
+  {% set producerEntriesRelatedToCountry = craft.entries().section('producers').relatedTo(allWinesInCountry).all() %}
 
-  {% set producerEntriesInCountry = craft.entries().section('producers').relatedTo(allWinesInCountry).all() %}
+  {% for entry in producerEntriesRelatedToCountry %}
+    {% set producerWines = allWinesInCountry.relatedTo(entry) %}
+    {% set regions = craft.tags().group('regions').relatedTo(producerWines) %}
+    {% set subRegions = craft.tags().group('subRegions').relatedTo(producerWines) %}
+    {% set country = craft.entries.section('countries').relatedTo(producerWines) %}
+    {% do entry.setFieldValue('regionTag', regions) %}
+    {% do entry.setFieldValue('subRegionTag', subRegions) %}
+    {% do craft.app.getElements().saveElement(entry) %}
+  {% endfor %}
 
-
-
-
-{% for entry in producerEntriesInCountry %}
-  {% set producerWines = allWinesInCountry.relatedTo(entry) %}
-  {% set regions = craft.tags().group('regions').relatedTo(producerWines) %}
-  {% set subRegions = craft.tags().group('subRegions').relatedTo(producerWines) %}
-  {% set country = craft.entries.section('countries').relatedTo(producerWines) %}
-  {% do entry.setFieldValue('regionTag', regions) %}
-  {% do entry.setFieldValue('subRegionTag', subRegions) %}
-  {% do craft.app.getElements().saveElement(entry) %}
-{% endfor %}
-
-
-
-
-
-
-
-
+  {% set producerEntriesInCountry = craft.entries().section('producers').country(countryName).all() %}
 
   <section id="country" {% if entry.heroImage|length %} {% set backgroundImage=entry.heroImage.one() %} class="w-screen min-h-screen flex flex-col pt-8 pb-8" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
@@ -40,7 +27,29 @@
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;"
     {% else %} class="w-screen min-h-screen flex flex-col pt-8 bg-gray-800" {% endif %}>
     <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ entry.title }}</h1>
+    <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4 justify-center">
+      {% for entry in producerEntriesInCountry %}
+        {% set producerName = entry.title %}
+        {% set producerDescription = entry.producerDescription|nl2br %}
+        {% set producerWines = craft.entries({
+        section: 'wines',
+        subRegionTag: ':empty:',
+        regionsTag: ':empty:',
+        relatedTo: [
+        'and',
+        { targetElement: craft.entries().section('producers').title(producerName) },
+        { targetElement: craft.entries().section('countries').title(countryName) }
+        ]
+        }) %}
+        {% if producerWines is empty %}
+        {% else %}
+        <div id="producersWithNoRegionBlock" class="w-full md:w-2/3">
+          {% include "_partials/blocks/producerBlock" %}
+          {% block producer %}{% endblock %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
 
   </section>
-
 {% endblock %}
