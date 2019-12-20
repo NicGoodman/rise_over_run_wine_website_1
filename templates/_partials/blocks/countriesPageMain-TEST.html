@@ -65,6 +65,7 @@ relatedTo: [
         <h2 id="regionName" class="w-full self-end text-3xl text-right text-gray-200 font-muli font-medium uppercase rounded-b-none border-b border-gray-200 mb-8">{{ regionName.title }}</h2>
         <div id="region-content" class="flex flex-wrap justify-end">
         {% set producerEntriesRelatedToRegion = craft.entries().section('producers').relatedTo(regionName).all() %}
+        <div id="producers-with-no-subregion" class="flex flex-wrap justify-end">
         {% for entry in producerEntriesRelatedToRegion %}
           {% set producerName = entry.title %}
           {% set producerDescription = entry.producerDescription|nl2br %}
@@ -85,6 +86,7 @@ relatedTo: [
             {{ block('producer') }}
         </div>
           {% endif %}
+          </div>
         {% endfor %}
 
         {% set winesBySubRegions = craft.entries({
