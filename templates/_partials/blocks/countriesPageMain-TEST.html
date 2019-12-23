@@ -34,7 +34,7 @@ relatedTo: [
     rgba(44, 55, 71, .5)
   ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;"
   {% else %} class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800" {% endif %}>
-  <h1 id="countryName" class="w-full mb-16 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
+  <h1 id="countryName" class="w-full mb-4 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
   <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4 justify-center">
       {% for entry in producerEntriesRelatedToCountry %}
         {% set producerName = entry.title %}
@@ -105,7 +105,7 @@ relatedTo: [
         {% for tag in subRegions.all() %}
         {% set subRegionName = tag %}
         <section id="subRegion" class="flex flex-wrap self-start justify-center w-full lg:w-1/2">
-          <h3 id="subRegionName" class="w-5/6 self-center text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500 mb-4">{{ subRegionName.title }}</h3>
+          <h3 id="subRegionName" class="w-5/6 self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500 mb-4">{{ subRegionName.title }}</h3>
           {% set producerEntriesRelatedToSubRegion = craft.entries().section('producers').relatedTo(subRegionName).all() %}
           {% for entry in producerEntriesRelatedToSubRegion %}
             {% set producerName = entry.title %}
