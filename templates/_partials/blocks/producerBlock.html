@@ -48,7 +48,7 @@
       <i class="fas fa-apple-alt text-green-400"></i>
       {% endif %}
       <h5 id="wineNameText" class="ml-1">
-      {{ grapeName }}{{ vintage }}<br /><span class="italic">{{ wineName }}</span><i class="fas fa-glass-cheers"></i>
+      {{ grapeName }}{{ vintage }}{% if wineStyle.value == 'sparkling' %} • <i class="fas fa-glass-cheers"></i>{% endif %}<br /><span class="italic">{{ wineName }}</span>
       </h5>
     </div>
     {% endfor %}
