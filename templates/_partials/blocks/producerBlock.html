@@ -37,8 +37,14 @@
       {% if wineType.value == 'rose' %}
       <i class="fas fa-circle text-red-200"></i>
       {% endif %}
+      {% if wineType.value == 'rosé' %}
+      <i class="fas fa-circle text-red-200"></i>
+      {% endif %}
       {% if wineType.value == 'orange' %}
       <i class="fas fa-circle text-orange-300"></i>
+      {% endif %}
+      {% if wineType.value == 'cider' %}
+      <i class="fas fa-apple-alt text-yellow-400"></i>
       {% endif %}
       <h5 id="wineNameText" class="ml-1">
       {{ wineName }}{{ grapeName }}{{ entry.vintage }}
