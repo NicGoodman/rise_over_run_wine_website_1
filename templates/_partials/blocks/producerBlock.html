@@ -1,5 +1,5 @@
 {% block producer %}
-<section id="producer" class="flex flex-col md:flex-row w-full p-4 mb-6">
+<section id="producer" class="flex flex-col md:flex-row w-full p-4 mb-2">
   <div id="producerImage" class="flex flex-col items-start md:items-center ">
   {% if entry.producerImage|length %}
   {% set backgroundImage = entry.producerImage.one() %}
@@ -27,7 +27,7 @@
     {% set wineType = entry.wineType %}
     {% set wineName = entry.wineName ~ ' • '%}
     {% set grapeName = entry.grape ~ ' • '%}
-    <div id="wineName" class="flex flex-row text-base align-top font-medium font-zilla text-gray-200 mb-2 leading-tight">
+    <div id="wineName" class="flex flex-row text-base font-medium font-zilla text-gray-200 mb-2 leading-tight">
       {% if wineType.value == 'red' %}
       <i class="fas fa-circle text-red-700"></i>
       {% endif %}
