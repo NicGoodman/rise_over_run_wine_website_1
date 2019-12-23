@@ -3,7 +3,7 @@
   <div id="producerImageAndBio" class="w-full">
   {% if entry.producerImage|length %}
   {% set backgroundImage = entry.producerImage.one() %}
-    <div class="float-left inline-flex flex-col flex-shrink-0 justify-center w-32 h-32 md:ml-2 md:mr-2 bg-riseoverrunwine-blue rounded-full border-2 border-riseoverrunwine-blue text-gray-100" style="background: linear-gradient(
+    <div class="float-left inline-flex flex-col flex-shrink-0 justify-center w-32 h-32 ml-2 mr-2 bg-riseoverrunwine-blue rounded-full border-2 border-riseoverrunwine-blue text-gray-100" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
@@ -18,7 +18,7 @@
       </h4>
     </div>
   {% endif %}
-  <h4 id="producerDescription" class="inline text-base font-light font-zilla text-gray-200 pl-2 py-4 leading-tight">
+  <h4 id="producerDescription" class="inline text-base font-light font-zilla text-gray-200 py-4 leading-tight">
   <p>{{ producerDescription|nl2br }}</p>
   </h4>
   </div>
