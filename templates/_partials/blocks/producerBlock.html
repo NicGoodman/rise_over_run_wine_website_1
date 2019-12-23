@@ -25,6 +25,7 @@
   <div id="producerWines" class="w-full mt-4">
     {% for entry in producerWines.all() %}
     {% set wineType = entry.wineType %}
+    {% set wineStyle = entry.wineStyle %}
     {% set wineName = entry.wineName %}
     {% set grapeName = entry.grape %}
     {% set vintage = ' • ' ~ entry.vintage %}
