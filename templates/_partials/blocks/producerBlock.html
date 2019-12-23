@@ -27,7 +27,7 @@
     {% set wineType = entry.wineType %}
     {% set wineName = entry.wineName ~ ' • '%}
     {% set grapeName = entry.grape ~ ' • '%}
-    <div id="wineName" class="flex flex-row text-base font-medium font-zilla text-gray-200 mb-1">
+    <div id="wineName" class="flex flex-row text-base align-top font-medium font-zilla text-gray-200 mb-2 leading-tight">
       {% if wineType.value == 'red' %}
       <i class="fas fa-circle text-red-700"></i>
       {% endif %}
