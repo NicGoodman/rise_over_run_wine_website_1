@@ -105,7 +105,7 @@ relatedTo: [
         {% for tag in subRegions.all() %}
         {% set subRegionName = tag %}
         <section id="subRegion" class="flex flex-wrap self-start justify-center w-full lg:w-1/2">
-          <h3 id="subRegionName" class="w-5/6 self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500 mb-4">{{ subRegionName.title }}</h3>
+          <h3 id="subRegionName" class="w-5/6 self-end text-lg text-right text-gray-200 font-muli font-bold uppercase border-b border-gray-500 mb-4 mt-8">{{ subRegionName.title }}</h3>
           {% set producerEntriesRelatedToSubRegion = craft.entries().section('producers').relatedTo(subRegionName).all() %}
           {% for entry in producerEntriesRelatedToSubRegion %}
             {% set producerName = entry.title %}
