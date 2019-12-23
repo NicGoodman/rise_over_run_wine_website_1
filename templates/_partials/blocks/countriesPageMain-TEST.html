@@ -34,7 +34,7 @@ relatedTo: [
     rgba(44, 55, 71, .5)
   ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;"
   {% else %} class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800" {% endif %}>
-  <h1 id="countryName" class="w-full mb-4 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
+  <h1 id="countryName" class="w-full mb-4 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
   <section id="producersWtihNoRegion" class="flex flex-wrap justify-start w-full mb-20">
       {% for entry in producerEntriesRelatedToCountry %}
         {% set producerName = entry.title %}
