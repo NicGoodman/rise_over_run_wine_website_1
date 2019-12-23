@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d96ae8fb2ff2120da2d4c214c44c0f6",
+    "content-hash": "131422ca7044064c81f3013330c59dec",
     "packages": [
+        {
+            "name": "bolden/htmlcache",
+            "version": "1.0.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/boldenamsterdam/htmlcache.git",
+                "reference": "ff0df86609f71f4782164a04bc2f9aa5efb2c115"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boldenamsterdam/htmlcache/zipball/ff0df86609f71f4782164a04bc2f9aa5efb2c115",
+                "reference": "ff0df86609f71f4782164a04bc2f9aa5efb2c115",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "HTML Cache",
+                "handle": "html-cache",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "class": "bolden\\htmlcache\\HtmlCache"
+            },
+            "autoload": {
+                "psr-4": {
+                    "bolden\\htmlcache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bolden B.V.",
+                    "homepage": "https://www.bolden.nl"
+                }
+            ],
+            "description": "Cache pages to HTML and boost website performance on Craft CMS 3.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "html cache"
+            ],
+            "time": "2019-07-09T11:45:47+00:00"
+        },
         {
             "name": "cakephp/core",
             "version": "3.8.7",
