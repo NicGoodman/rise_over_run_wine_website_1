@@ -35,7 +35,7 @@ relatedTo: [
   ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;"
   {% else %} class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800" {% endif %}>
   <h1 id="countryName" class="w-full mb-4 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
-  <section id="producersWtihNoRegion" class="flex flex-wrap w-full pt-4 pr-4 justify-center">
+  <section id="producersWtihNoRegion" class="flex flex-wrap justify-start w-full mb-20">
       {% for entry in producerEntriesRelatedToCountry %}
         {% set producerName = entry.title %}
         {% set producerDescription = entry.producerDescription|nl2br %}
@@ -51,7 +51,7 @@ relatedTo: [
         }) %}
         {% if producerWines is empty %}
         {% else %}
-        <div id="producersWithNoRegionBlock" class="w-full md:w-2/3">
+        <div id="producersWithNoRegionBlock" class="w-full lg:w-1/2">
           {% include "_partials/blocks/producerBlock" %}
           {% block producer %}{% endblock %}
           </div>
