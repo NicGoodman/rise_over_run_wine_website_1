@@ -27,16 +27,16 @@
     {% set wineType = entry.wineType %}
     <h5 id="wineName" class="text-base font-medium font-zilla text-gray-200">
       {% if wineType.value == 'red' %}
-      <i class="fas fa-circle text-red-700 h-full"></i>
+      <span class="h-full"><i class="fas fa-circle text-red-700"></i></span>
       {% endif %}
       {% if wineType.value == 'white' %}
-      <i class="fas fa-circle text-yellow-200 h-full"></i>
+      <i class="fas fa-circle text-yellow-200"></i>
       {% endif %}
       {% if wineType.value == 'rose' %}
-      <i class="fas fa-circle text-red-200 h-full"></i>
+      <i class="fas fa-circle text-red-200"></i>
       {% endif %}
       {% if wineType.value == 'orange' %}
-      <i class="fas fa-circle text-orange-300 h-full"></i>
+      <i class="fas fa-circle text-orange-300"></i>
       {% endif %}
       {% set wineName = entry.wineName ~ ' • '%}
       {% set grapeName = entry.grape ~ ' • '%}
