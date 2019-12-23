@@ -18,9 +18,9 @@
       </h4>
     </div>
   {% endif %}
-  <h4 id="producerDescription" class="inline text-base font-light font-zilla text-gray-200 mt-4 leading-tight">
-  <p>{{ producerDescription|nl2br }}</p>
-  </h4>
+  <div id="producerDescription" class="inline text-base font-light font-zilla text-gray-200 mt-4 leading-tight">
+  {{ producerDescription|nl2br }}
+  </div>
   </div>
   <div id="producerWines" class="w-full mt-4">
     {% for entry in producerWines.all() %}
