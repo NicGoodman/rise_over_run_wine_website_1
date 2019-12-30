@@ -30,12 +30,13 @@ relatedTo: [
 }).all() %}
 {% if entry.heroImage|length %}
 {% set backgroundImage=entry.heroImage.one() %}
-<div id="country-intro" class="w-screen h-full p-4 md:p-8 lg:p-16" style="background: linear-gradient(
+<div id="country-intro" class="w-screen h-64 p-4 md:p-8 lg:p-16" style="background: linear-gradient(
     rgba(44, 55, 71, .5),
     rgba(44, 55, 71, .5)
   ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
   <h1 id="countryName" class="w-full mb-4 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
   </div>
+  <section id="country"  class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800">
 {% else %}
 <section id="country"  class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800">
 <h1 id="countryName" class="w-full mb-4 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
