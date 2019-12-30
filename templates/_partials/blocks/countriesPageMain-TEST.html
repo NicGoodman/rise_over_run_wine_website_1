@@ -28,18 +28,17 @@ relatedTo: [
 { targetElement: craft.entries().section('countries').title(countryName) }
 ]
 }).all() %}
-
-<section id="country"  class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800">
-  {% if entry.heroImage|length %}
-  {% set backgroundImage=entry.heroImage.one() %}
-  <div id="country-intro" class="w-screen h-64" style="background: linear-gradient(
-      rgba(44, 55, 71, .5),
-      rgba(44, 55, 71, .5)
-    ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
-    <h1 id="countryName" class="w-full mb-4 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
-    </div>
-  {% else %}
+{% if entry.heroImage|length %}
+{% set backgroundImage=entry.heroImage.one() %}
+<div id="country-intro" class="w-screen h-full p-4 md:p-8 lg:p-16" style="background: linear-gradient(
+    rgba(44, 55, 71, .5),
+    rgba(44, 55, 71, .5)
+  ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
   <h1 id="countryName" class="w-full mb-4 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
+  </div>
+{% else %}
+<section id="country"  class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800">
+<h1 id="countryName" class="w-full mb-4 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
   {% endif %}
   <section id="producersWtihNoRegion" class="flex flex-wrap justify-start w-full mb-20">
       {% for entry in producerEntriesRelatedToCountry %}
