@@ -2,7 +2,7 @@
 {% for block in entry.employeeBlock.all() %}
 {% set backgroundImage = block.employeeImage.one() %}
 <div id="employeeBlock" class="w-full mb-12">
-  <div id="employeeImage" class="float-left inline-flex flex-col justify-center flex-shrink-0 w-32 h-32 xl:w-40 xl:h-40 ml-2 mr-2 bg-riseoverrunwine-blue rounded-full border-2 border-gray-500 bg-center bg-cover" style="background-image: url('{{ backgroundImage.getUrl }}'); shape-outside:circle();">
+  <div id="employeeImage" class="float-left inline-flex flex-col justify-center flex-shrink-0 w-32 h-32 xl:w-40 xl:h-40 ml-2 mr-8 bg-riseoverrunwine-blue rounded-full border-2 border-gray-500 bg-center bg-cover" style="background-image: url('{{ backgroundImage.getUrl }}'); shape-outside:circle();">
   </div>
   <div id="employeeBio" class="inline w-full pl-4 pt-4">
     <h1 id="employeeName" class=" text-lg text-left font-muli font-black uppercase text-gray-100">{{ block.employeeName }}</h1>
