@@ -44,7 +44,7 @@ relatedTo: [
   <section id="producersWtihNoRegion" class="flex flex-wrap justify-start w-full mb-20">
       {% for entry in producerEntriesRelatedToCountry %}
         {% set producerName = entry.title %}
-        {% set producerDescription = entry.producerDescription|nl2br %}
+        {% set producerDescription = entry.producerDescription %}
         {% set producerWines = craft.entries({
         section: 'wines',
         subRegionTag: ':empty:',
@@ -74,7 +74,7 @@ relatedTo: [
         <div id="producers-with-no-subregion" class="flex flex-wrap justify-start w-full mb-20">
         {% for entry in producerEntriesRelatedToRegion %}
           {% set producerName = entry.title %}
-          {% set producerDescription = entry.producerDescription|nl2br %}
+          {% set producerDescription = entry.producerDescription %}
           {% set producerWines = craft.entries({
           section: 'wines',
           subRegionTag: ':empty:',
