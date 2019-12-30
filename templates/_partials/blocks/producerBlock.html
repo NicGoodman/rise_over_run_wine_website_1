@@ -9,10 +9,10 @@
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover; shape-outside:circle();">
     </div>
   {% else %}
-    
+
   {% endif %}
-  <div id="producerDescription" class="inline mt-4 text-base font-light text-left font-zilla text-gray-200 leading-tight">
-    <h4 id="producerName" class="text-sm text-left font-muli font-bold uppercase">
+  <div id="producerDescription" class="inline text-base font-light text-left font-zilla text-gray-200 leading-tight">
+    <h4 id="producerName" class="text-sm text-left font-muli font-bold uppercase mt-4 ">
     {{ producerName }}
     </h4>
   <p class="">{{ producerDescription|nl2br }}</p>
