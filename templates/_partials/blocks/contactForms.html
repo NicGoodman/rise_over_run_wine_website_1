@@ -21,7 +21,7 @@
       <p class="message error font-bold">{{ craft.app.session.getFlash('error') }}</p>
       {% endif %}
 
-  <h3 class="text-left text-xl font-muli font-black uppercase text-gray-800 mt-16"><label class="appearance-none" for="from-name">Name</label></h3>
+  <h3 class="text-left text-xl font-muli font-black uppercase text-gray-800"><label class="appearance-none" for="from-name">Name</label></h3>
   <input id="from-name" class="appearance-none w-full bg-riseoverrunwine-blue border-b-2 border-gray-800 rounded-none" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
   {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 
