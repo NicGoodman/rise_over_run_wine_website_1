@@ -3,7 +3,7 @@
 {% if entry.heroImage|length %}
 {% set backgroundImage = entry.heroImage.one() %}
 <a id="country" href="/countries/{{ entry.slug }}">
-<div class="flex flex-col justify-center w-32 h-32 xl:w-40 xl:h-40 m-2 p-2 bg-riseoverrunwine-blue rounded-full border-2 border-riseoverrunwine-blue text-gray-100" style="background: linear-gradient(
+<div class="flex flex-col justify-center w-32 h-32 xl:w-40 xl:h-40 m-2 p-2 bg-riseoverrunwine-blue rounded-full border-2 border-riseoverrunwine-blue text-gray-100 hover:bg-gray-800 hover:text-riseoverrunwine-blue" style="background: linear-gradient(
   rgba(44, 55, 71, .5),
   rgba(44, 55, 71, .5)
 ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
