@@ -34,12 +34,12 @@ relatedTo: [
     rgba(44, 55, 71, .5),
     rgba(44, 55, 71, .5)
   ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
-  <h1 id="countryName" class="w-full mb-64 mt-64 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
+  <h1 id="countryName" class="w-full mb-64 mt-64 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
   </div>
   <section id="country"  class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800">
 {% else %}
 <section id="country"  class="w-screen max-w-5xl min-h-screen flex flex-col self-center p-4 md:p-8 lg:p-16 bg-gray-800">
-<h1 id="countryName" class="w-full mb-4 text-left text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
+<h1 id="countryName" class="w-full mb-4 text-right text-5xl font-muli font-black uppercase text-riseoverrunwine-blue">{{ countryName }}</h1>
   {% endif %}
   <section id="producersWtihNoRegion" class="flex flex-wrap justify-start w-full mb-20">
       {% for entry in producerEntriesRelatedToCountry %}
