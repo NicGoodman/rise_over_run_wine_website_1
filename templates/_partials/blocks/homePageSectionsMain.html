@@ -1,21 +1,13 @@
 {% block homePageMain %}
 <section id="hero">
 {% set backgroundImage = entry.heroImage.one() %}
-<div id="hero" class="flex flex-col mx-auto w-screen pl-4 md:pl-8 lg:pl-16 pr-4 bg-bottom bg-cover" style="height: calc(100vh - 8rem); background-image: url('{{ backgroundImage.getUrl }}');">
-  {% if entry.heroHeading|length %}
-  <h1 class="w-2/3 text-5xl font-black text-gray-800 font-muli" style="background: rgb(201,234,243);
+<div id="hero" class="flex flex-col mx-auto w-screen bg-bottom bg-cover" style="height: calc(100vh - 8rem); background-image: url('{{ backgroundImage.getUrl }}');">
+  <div id="intro-container" class="flex flex-row pl-4 md:pl-8 lg:pl-16 pr-4 h-24" style="background: rgb(201,234,243);
 background: linear-gradient(180deg, rgba(201,234,243,1) 45%, rgba(201,234,243,0) 100%);">
-    {{ entry.heroHeading }}
-  </h1>
-  <h3 class="w-full lg:w-1/3 text-2xl font-medium font-muli text-gray-800 rounded-b-none border-t-2 border-gray-500 mb-2" style="background: rgb(201,234,243);
-background: linear-gradient(180deg, rgba(201,234,243,1) 45%, rgba(201,234,243,0) 100%);">
+  <h3 class="w-full lg:w-1/3 text-2xl font-medium text-left font-muli text-gray-800 rounded-b-none border-t-2 border-gray-500 mb-2">
     {{ entry.heroText }}
   </h3>
-  {% else %}
-  <h3 class="w-full lg:w-1/3 text-2xl font-medium font-muli text-gray-800 rounded-b-none border-t-2 border-gray-500 mb-2" style="background: rgb(201,234,243);
-background: linear-gradient(180deg, rgba(201,234,243,1) 45%, rgba(201,234,243,0) 100%);">
-    {{ entry.heroText }}
-  </h3>
+  </div>
   {% endif %}
 </div>
 </section>
