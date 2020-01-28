@@ -30,7 +30,7 @@ relatedTo: [
 }).all() %}
 {% if entry.heroImage|length %}
 {% set backgroundImage=entry.heroImage.one() %}
-<div id="country-intro" class="w-screen h-full max-h-screen p-4 md:p-8 lg:p-16" style="background: linear-gradient(
+<div id="country-intro" class="w-screen h-full max-h-screen p-4 md:p-8 lg:p-16 border-t-4 border-gray-800" style="background: linear-gradient(
     rgba(44, 55, 71, .5),
     rgba(44, 55, 71, .5)
   ), url('{{ backgroundImage.getUrl }}') center; background-size:cover;">
