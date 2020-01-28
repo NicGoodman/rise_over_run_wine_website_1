@@ -1,6 +1,26 @@
 {% block header %}
 <div id ="header" class="flex flex-row justify-between items-center w-screen h-32 pl-4 pr-4 md:pl-8 md:pr-8 lg:pl-16 lg:pr-16 bg-gray-100 text-gray-800">
 <h1 id="siteName" class="text-3xl sm:text-5xl md:text-6xl font-normal font-muli leading-none"><a href="{{ siteUrl }}">RISE OVER RUN</a></h1>
-<i class="fas fa-bars text-3xl sm:text-5xl md:text-6xl cursor-pointer hover:text-gray-500"></i>
+<nav id="navigation" class="hidden">
+  <div id="navigationList" class="h-full p-16 text-gray-800 font-light font-kepler text-4xl text-right bg-gray-100">
+    <ul>
+      <li id="navLink1" class="inline">
+        <a href="/#our-wines" class="hover:text-riseoverrunwine-blue">
+          <h2>Our Wines</h2>
+        </a>
+      </li>
+      <li id="navLink2" class="inline">
+        <a href="/#about-us" class="hover:text-riseoverrunwine-blue">
+          <h2>About Us</h2>
+        </a>
+      </li>
+      <li id="navLink3" class="inline">
+        <a href="/#get-in-touch" class="hover:text-riseoverrunwine-blue">
+          <h2>Get In Touch</h2>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 </div>
 {% endblock %}
