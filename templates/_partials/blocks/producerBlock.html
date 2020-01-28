@@ -3,7 +3,7 @@
   <div id="producerImageAndBio" class="w-full">
     {% if entry.producerImage|length %}
     {% set backgroundImage = entry.producerImage.one() %}
-    <div class="float-left inline-flex flex-col flex-shrink-0 justify-center w-32 h-32 ml-2 mr-8 mb-2 bg-riseoverrunwine-blue rounded-full border-2 border-riseoverrunwine-blue text-gray-100" style="background: linear-gradient(
+    <div class="float-left inline-flex flex-col flex-shrink-0 justify-center w-32 h-32 ml-2 mr-8 mb-2 bg-riseoverrunwine-blue rounded-full border-2 border-gray-800 text-gray-100" style="background: linear-gradient(
       rgba(44, 55, 71, .5),
       rgba(44, 55, 71, .5)
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover; shape-outside:circle();">
