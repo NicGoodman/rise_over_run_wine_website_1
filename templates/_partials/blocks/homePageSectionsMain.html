@@ -7,6 +7,10 @@
     {{ entry.heroText }}
   </h3>
   </div>
+  <nav id="navigation"  class="hidden">
+    {% include "_partials/blocks/navigation" %}
+    {% block navigation %}{% endblock %}
+  </nav>
 </div>
 </section>
 <section id="ourWines">
