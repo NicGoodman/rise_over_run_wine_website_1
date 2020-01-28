@@ -9,7 +9,7 @@
     ), url('{{ backgroundImage.getUrl }}') center; background-size:cover; shape-outside:circle();">
     </div>
     {% endif %}
-  <div id="producerDescription" class="inline text-base font-light text-left font-zilla text-gray-200 leading-tight">
+  <div id="producerDescription" class="inline text-base font-light text-left font-kepler text-gray-200 leading-tight">
     <h4 id="producerName" class="mt-4 text-base text-left font-muli font-bold uppercase">
     {{ producerName }}
     </h4>
@@ -24,7 +24,7 @@
     {% set wineName = entry.wineName %}
     {% set grapeName = entry.grape %}
     {% set vintage = ' • ' ~ entry.vintage %}
-    <div id="wineName" class="flex flex-row text-base font-medium font-zilla text-gray-200 mb-3 leading-tight">
+    <div id="wineName" class="flex flex-row text-base font-bold font-zilla text-gray-200 mb-3 leading-tight">
       {% if wineType.value == 'red' %}
       <i class="fas fa-circle text-red-700"></i>
       {% endif %}

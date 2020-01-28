@@ -3498,8 +3498,8 @@ video {
   font-family: Muli, sans-serif;
 }
 
-.font-zilla {
-  font-family: Zilla Slab, serif;
+.font-kepler {
+  font-family: kepler-std-display, serif;
 }
 
 .font-hairline {
@@ -10320,8 +10320,8 @@ video {
     font-family: Muli, sans-serif;
   }
 
-  .sm\:font-zilla {
-    font-family: Zilla Slab, serif;
+  .sm\:font-kepler {
+    font-family: kepler-std-display, serif;
   }
 
   .sm\:font-hairline {
@@ -17127,8 +17127,8 @@ video {
     font-family: Muli, sans-serif;
   }
 
-  .md\:font-zilla {
-    font-family: Zilla Slab, serif;
+  .md\:font-kepler {
+    font-family: kepler-std-display, serif;
   }
 
   .md\:font-hairline {
@@ -23934,8 +23934,8 @@ video {
     font-family: Muli, sans-serif;
   }
 
-  .lg\:font-zilla {
-    font-family: Zilla Slab, serif;
+  .lg\:font-kepler {
+    font-family: kepler-std-display, serif;
   }
 
   .lg\:font-hairline {
@@ -30741,8 +30741,8 @@ video {
     font-family: Muli, sans-serif;
   }
 
-  .xl\:font-zilla {
-    font-family: Zilla Slab, serif;
+  .xl\:font-kepler {
+    font-family: kepler-std-display, serif;
   }
 
   .xl\:font-hairline {

@@ -11,8 +11,8 @@ module.exports = {
           'Muli',
           'sans-serif',
         ],
-        'zilla': [
-          'Zilla Slab',
+        'kepler': [
+          'kepler-std-display',
           'serif',
         ],
       }
