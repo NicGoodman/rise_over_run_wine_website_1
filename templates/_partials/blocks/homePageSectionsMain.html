@@ -3,7 +3,7 @@
 {% set backgroundImage = entry.heroImage.one() %}
 <div id="hero" class="flex flex-col mx-auto w-screen bg-bottom bg-cover" style="height: calc(100vh - 8rem); background-image: url('{{ backgroundImage.getUrl }}');">
   <div id="intro-container" class="flex flex-row pl-4 md:pl-8 lg:pl-16 pr-4 h-24 bg-gray-100">
-  <h3 class="w-full lg:w-1/3 text-2xl font-light tracking-wider text-left font-kepler text-gray-800 rounded-b-none border-t-2 border-gray-500 mb-2">
+  <h3 class="w-full lg:w-1/2 text-2xl font-light tracking-wider text-left font-kepler text-gray-800 rounded-b-none border-t-2 border-gray-500 mb-2">
     {{ entry.heroText }}
   </h3>
   </div>
