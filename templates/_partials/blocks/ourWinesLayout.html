@@ -28,14 +28,13 @@ country: ':empty:'
         <h4 class="text-xl text-left md:text-right px-4 md:px-0 font-light font-kepler tracking-wider text-gray-800">
           {{ entry.ourWinesSectionIntro|nl2br }}
         </h4>
-        <div id="announcementContainer" class="flex flex-col md:flex-row">
-          <h4 id="" class="text-xl text-left md:text-right px-4 md:px-0 font-normal font-kepler tracking-wider text-gray-800">
+        <div id="announcementContainer" class="flex flex-col md:flex-row text-left md:text-right">
+          <h4 id="" class="text-xl px-4 md:px-0 font-normal font-kepler tracking-wider text-gray-800">
             {{ entry.announcementText|nl2br }}
           </h4>
           {% if entry.announcementImage|length %}
           {% set image = entry.announcementImage.one() %}
-          <div class="self-start md:self-end w-1/2 rounded-md border-2 border-gray-800 text-gray-100 p-4" style="background: url('{{ image.getUrl }}') center; background-size:contain;">
-          </div>
+          <img src="image.url" alt="" class="w-1/2">
           {% endif %}
         </div>
       </div>
