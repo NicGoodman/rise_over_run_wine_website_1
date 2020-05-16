@@ -29,12 +29,12 @@ country: ':empty:'
           {{ entry.ourWinesSectionIntro|nl2br }}
         </h4>
         <div id="announcementContainer" class="flex flex-col md:flex-row text-left md:text-right justify-end">
-          <h4 id="" class="text-xl pr-4 font-normal font-kepler tracking-wider text-gray-800">
+          <h4 id="" class="text-xl px-4 font-normal font-kepler tracking-wider text-gray-800">
             {{ entry.announcementText|nl2br }}
           </h4>
           {% if entry.announcementImage|length %}
           {% set image = entry.announcementImage.one() %}
-          <div class="w-1/2 border-2 border-gray-500 rounded-lg">
+          <div class="w-full md:w-2/5 border-2 border-gray-500 rounded-lg">
             <img src="{{ image.Url }}" alt="" class="w-full rounded-lg">
           </div>
           {% endif %}
