@@ -34,7 +34,9 @@ country: ':empty:'
           </h4>
           {% if entry.announcementImage|length %}
           {% set image = entry.announcementImage.one() %}
-          <img src="{{ image.Url }}" alt="" class="w-1/2">
+          <div class="w-1/2">
+            <img src="{{ image.Url }}" alt="" class="w-full">
+          </div>
           {% endif %}
         </div>
       </div>
